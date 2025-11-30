@@ -1,4 +1,6 @@
 {
+    "mirrorchyan_rid": "MAATree",
+    "mirrorchyan_multiplatform": true,
     "custom_title": "树批小助手",
     "controller": [
         {
