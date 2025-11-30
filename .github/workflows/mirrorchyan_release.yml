@@ -1,0 +1,35 @@
+name: mirrorchyan_release
+
+on:
+  workflow_dispatch:
+    inputs:
+        tag:
+            default: ''
+            required: false
+#   release:
+#     types: [released]
+
+jobs:
+  mirrorchyan:
+    runs-on: macos-latest
+    # if: ${{ github.repository_owner == 'caicai00001' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [win, macos, linux]
+        arch: [aarch64, x86_64]
+    steps:
+      - uses: MirrorChyan/uploading-action@v1
+        with:
+          filetype: latest-release
+          filename: ${{ format('MAATree-{0}-{1}-*', matrix.os, matrix.arch) }}
+          mirrorchyan_rid: MAATree
+          tag: ${{ inputs.tag }}
+
+          os: ${{ matrix.os }}
+          arch: ${{ matrix.arch }}
+
+          owner: caicai00001
+          repo: MAATree
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          upload_token: ${{ secrets.MirrorChyanUploadToken }}
