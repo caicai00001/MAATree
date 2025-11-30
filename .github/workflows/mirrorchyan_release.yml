@@ -20,6 +20,7 @@ jobs:
         arch: [aarch64, x86_64]
     steps:
       - uses: MirrorChyan/uploading-action@v1
+        if: ${{ matrix.os != 'win' || matrix.arch != 'aarch64' }}
         with:
           filetype: latest-release
           filename: ${{ format('MAATree-{0}-{1}-*', matrix.os, matrix.arch) }}
@@ -33,3 +34,4 @@ jobs:
           repo: MAATree
           github_token: ${{ secrets.GITHUB_TOKEN }}
           upload_token: ${{ secrets.MirrorChyanUploadToken }}
+
