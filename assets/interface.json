@@ -959,15 +959,15 @@
             "cases": [
                 {
                     "name": "不炼",
-                    "pipeline_override": {
-                        "一键炼成_常规熔炼_选择材料_幻象照片1": {
-                            "enabled": false
-                        }
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "炼",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "一键炼成_常规熔炼_选择材料_幻象照片1": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -975,15 +975,15 @@
             "cases": [
                 {
                     "name": "不炼",
-                    "pipeline_override": {
-                        "一键炼成_常规熔炼_选择材料_龙照片1": {
-                            "enabled": false
-                        }
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "炼",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "一键炼成_常规熔炼_选择材料_龙照片1": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -991,15 +991,15 @@
             "cases": [
                 {
                     "name": "不炼",
-                    "pipeline_override": {
-                        "一键炼成_常规熔炼_选择材料_龙勋章2": {
-                            "enabled": false
-                        }
-                    }
+                    "pipeline_override": {}
                 },
                 {
                     "name": "炼",
-                    "pipeline_override": {}
+                    "pipeline_override": {
+                        "一键炼成_常规熔炼_选择材料_龙勋章2": {
+                            "enabled": true
+                        }
+                    }
                 }
             ]
         },
@@ -1008,9 +1008,6 @@
                 {
                     "name": "不炼",
                     "pipeline_override": {
-                        "一键炼成_常规熔炼_选择材料_强振石2": {
-                            "enabled": false
-                        },
                         "等待进入": {
                             "next": "主页检测"
                         },
@@ -1022,6 +1019,9 @@
                 {
                     "name": "炼",
                     "pipeline_override": {
+                        "一键炼成_常规熔炼_选择材料_强振石2": {
+                            "enabled": true
+                        },
                         "等待进入": {
                             "next": "主页检测"
                         },
