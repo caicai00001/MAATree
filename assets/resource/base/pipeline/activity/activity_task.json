@@ -1,0 +1,71 @@
+{
+    "ActivityTask": {
+        "next": [
+            "EnterActivityTask",
+            "ActivityTaskMain",
+            "[JumpBack]ActivityShopReturn",
+            "[JumpBack]ActivityDungeonReturn",
+            "[JumpBack]EnterActivity"
+        ]
+    },
+    "EnterActivityTask": {
+        "recognition": "OCR",
+        "expected": [
+            "任",
+            "务"
+        ],
+        "roi": [
+            90,
+            356,
+            169,
+            48
+        ],
+        "action": "Click",
+        "next": [
+            "ActivityTaskMain",
+            "EnterActivityTask"
+        ]
+    },
+    "ActivityTaskMain": {
+        "recognition": "OCR",
+        "expected": [
+            "任",
+            "务"
+        ],
+        "roi": [
+            87,
+            74,
+            150,
+            57
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]ActivityTaskCollect",
+            "[JumpBack]ActivyClickBlackClose"
+        ],
+        "timeout": 3000,
+        "on_error": [
+            "停止"
+        ]
+    },
+    "ActivityTaskCollect": {
+        "recognition": "ColorMatch",
+        "lower": [
+            250,
+            250,
+            250
+        ],
+        "upper": [
+            255,
+            255,
+            255
+        ],
+        "roi": [
+            35,
+            275,
+            38,
+            79
+        ],
+        "action": "Click"
+    }
+}

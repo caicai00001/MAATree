@@ -1,0 +1,108 @@
+{
+    "ActivityShop": {
+        "next": [
+            "EnterActivityShop",
+            "ActivityShopMain",
+            "[JumpBack]ActivityDungeonReturn",
+            "[JumpBack]EnterActivity"
+        ]
+    },
+    "EnterActivityShop": {
+        "recognition": "OCR",
+        "expected": [
+            "商",
+            "店"
+        ],
+        "roi": [
+            93,
+            472,
+            155,
+            54
+        ],
+        "action": "Click",
+        "next": [
+            "ActivityShopMain",
+            "EnterActivityShop"
+        ]
+    },
+    "ActivityShopMain": {
+        "recognition": "OCR",
+        "expected": [
+            "活动",
+            "商店",
+            "交易",
+            "时间"
+        ],
+        "roi": [
+            826,
+            573,
+            384,
+            138
+        ],
+        "action": "Click",
+        "next": [
+            "[JumpBack]ActivityShopBuyGold",
+            "[JumpBack]ActivySwipLeft"
+        ],
+        "timeout": 3000,
+        "on_error": [
+            "ActivityTask"
+        ]
+    },
+    "ActivityShopReturn": {
+        "recognition": "OCR",
+        "expected": [
+            "活动",
+            "商店",
+            "交易",
+            "时间"
+        ],
+        "roi": [
+            826,
+            573,
+            384,
+            138
+        ],
+        "action": "Click",
+        "next": [
+            "ActivityReturnButton"
+        ]
+    },
+    "ActivityShopBuyGold": {
+        "recognition": "OCR",
+        "expected": [
+            "尼",
+            "奥德",
+            "德"
+        ],
+        "roi": [
+            7,
+            145,
+            1272,
+            419
+        ],
+        "action": "Click",
+        "next": [
+            "ActivityShopBuyGoldOK"
+        ],
+        "max_hit": 1
+    },
+    "ActivityShopBuyGoldOK": {
+        "recognition": "OCR",
+        "expected": [
+            "确",
+            "定"
+        ],
+        "roi": [
+            739,
+            577,
+            170,
+            67
+        ],
+        "action": "Click",
+        "post_delay": 2000,
+        "next": [
+            "ActivyClickBlackClose"
+        ]
+    }
+}

@@ -389,6 +389,25 @@
                     ]
                 }
             }
+        },
+        {
+            "name": "活动每日",
+            "entry": "ActivityDaily",
+            "pipeline_override": {
+                "BattleEnd": {
+                    "next": [
+                        "ActivityDungeonMain",
+                        "ActivityMultiContinue",
+                        "BattleEnd"
+                    ],
+                    "on_error": [
+                        "ActivityDungeon"
+                    ]
+                }
+            },
+            "option": [
+                "活动"
+            ]
         }
     ],
     "option": {
@@ -6273,6 +6292,289 @@
                     "pipeline_override": {
                         "扫荡极难材料": {
                             "template": "Story/极难加密许愿签__906_531_20_21__856_481_120_121.png"
+                        }
+                    }
+                }
+            ]
+        },
+        "活动": {
+            "cases": [
+                {
+                    "name": "天使福音",
+                    "pipeline_override": {}
+                },
+                {
+                    "name": "盘旋上空的阴影",
+                    "pipeline_override": {
+                        "ClickLimitActivity": {
+                            "enabled": false
+                        },
+                        "EnterActivityMain": {
+                            "template": "Activity/ShadowOverSky/盘旋上空的阴影活动入口__97_468_221_66__47_418_321_166.png"
+                        },
+                        "ActivityMain": {
+                            "template": "Activity/ShadowOverSky/盘旋上空的阴影主界面__327_513_449_137__277_463_549_237.png"
+                        },
+                        "EnterActivityDungeon": {
+                            "template": "Activity/ShadowOverSky/盘旋上空的阴影副本入口__959_459_136_48__909_409_236_148.png"
+                        },
+                        "ActivityDungeonMain": {
+                            "template": "Activity/ShadowOverSky/盘旋上空的阴影副本主界面__535_46_229_65__485_0_329_161.png",
+                            "on_error": [
+                                "ActivityTask"
+                            ]
+                        },
+                        "ActivityDungeonReturn": {
+                            "template": "Activity/ShadowOverSky/盘旋上空的阴影副本主界面__535_46_229_65__485_0_329_161.png"
+                        },
+                        "ActivitySoloDungeon1": {
+                            "roi": [
+                                538,
+                                410,
+                                199,
+                                66
+                            ]
+                        },
+                        "ActivitySoloDungeon2": {
+                            "roi": [
+                                882,
+                                416,
+                                202,
+                                62
+                            ]
+                        },
+                        "ActivitySoloDungeon3": {
+                            "enabled": false
+                        },
+                        "EnterActivityTask": {
+                            "expected": [
+                                "委托",
+                                "清单"
+                            ],
+                            "roi": [
+                                54,
+                                526,
+                                110,
+                                42
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "白昼星声",
+                    "pipeline_override": {
+                        "ClickLimitActivity": {
+                            "enabled": false
+                        },
+                        "EnterActivityMain": {
+                            "template": "Activity/DaylightStar/白昼星声活动入口__553_259_110_139__503_209_210_239.png"
+                        },
+                        "ActivityMain": {
+                            "template": "Activity/DaylightStar/白昼星声主界面__630_66_260_380__580_16_360_480.png"
+                        },
+                        "EnterActivityDungeon": {
+                            "template": "Activity/DaylightStar/白昼星声副本入口__989_195_113_86__939_145_213_186.png"
+                        },
+                        "ActivityDungeonMain": {
+                            "template": "Activity/DaylightStar/白昼星声副本主界面__347_96_218_166__297_46_318_266.png",
+                            "on_error": [
+                                "ActivityTask"
+                            ]
+                        },
+                        "ActivityDungeonReturn": {
+                            "template": "Activity/DaylightStar/白昼星声副本主界面__347_96_218_166__297_46_318_266.png"
+                        },
+                        "ActivitySoloDungeon1": {
+                            "roi": [
+                                865,
+                                377,
+                                154,
+                                79
+                            ]
+                        },
+                        "ActivitySoloDungeon2": {
+                            "enabled": false
+                        },
+                        "ActivitySoloDungeon3": {
+                            "enabled": false
+                        },
+                        "EnterActivityTask": {
+                            "expected": [
+                                "调查",
+                                "记录"
+                            ],
+                            "roi": [
+                                68,
+                                438,
+                                162,
+                                78
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "寒芒铭光",
+                    "pipeline_override": {
+                        "ClickLimitActivity": {
+                            "enabled": false
+                        },
+                        "EnterActivityMain": {
+                            "template": "Activity/ColdLight/寒芒铭光活动入口__793_462_192_79__743_412_292_179.png"
+                        },
+                        "ActivityMain": {
+                            "template": "Activity/ColdLight/寒芒铭光主界面__341_482_423_165__291_432_523_265.png"
+                        },
+                        "EnterActivityDungeon": {
+                            "template": "Activity/ColdLight/寒芒铭光副本入口__953_469_148_61__903_419_248_161.png"
+                        },
+                        "ActivityDungeonMain": {
+                            "template": "Activity/ColdLight/寒芒铭光副本主界面__576_176_132_92__526_126_232_192.png",
+                            "on_error": [
+                                "ActivityTask"
+                            ]
+                        },
+                        "ActivityDungeonReturn": {
+                            "template": "Activity/ColdLight/寒芒铭光副本主界面__576_176_132_92__526_126_232_192.png"
+                        },
+                        "ActivitySoloDungeon1": {
+                            "roi": [
+                                865,
+                                377,
+                                154,
+                                79
+                            ]
+                        },
+                        "ActivitySoloDungeon2": {
+                            "enabled": false
+                        },
+                        "ActivitySoloDungeon3": {
+                            "enabled": false
+                        },
+                        "EnterActivityTask": {
+                            "expected": [
+                                "调查",
+                                "记录"
+                            ],
+                            "roi": [
+                                96,
+                                493,
+                                162,
+                                78
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "灼光惊岁",
+                    "pipeline_override": {
+                        "ClickLimitActivity": {
+                            "enabled": false
+                        },
+                        "EnterActivityMain": {
+                            "template": "Activity/BlazingYear/灼光惊岁活动入口__630_441_211_88__580_391_311_188.png"
+                        },
+                        "ActivityMain": {
+                            "template": "Activity/BlazingYear/灼光惊岁主界面__351_507_393_147__301_457_493_247.png"
+                        },
+                        "EnterActivityDungeon": {
+                            "template": "Activity/BlazingYear/灼光惊岁副本入口__975_362_169_49__925_312_269_149.png"
+                        },
+                        "ActivityDungeonMain": {
+                            "template": "Activity/BlazingYear/灼光惊岁副本主界面__221_58_200_57__171_8_300_157.png",
+                            "on_error": [
+                                "ActivityTask"
+                            ]
+                        },
+                        "ActivityDungeonReturn": {
+                            "template": "Activity/BlazingYear/灼光惊岁副本主界面__221_58_200_57__171_8_300_157.png"
+                        },
+                        "ActivitySoloDungeon1": {
+                            "roi": [
+                                540,
+                                400,
+                                143,
+                                86
+                            ]
+                        },
+                        "ActivitySoloDungeon2": {
+                            "roi": [
+                                898,
+                                409,
+                                114,
+                                71
+                            ]
+                        },
+                        "ActivitySoloDungeon3": {
+                            "enabled": false
+                        },
+                        "EnterActivityTask": {
+                            "expected": [
+                                "调查",
+                                "记录"
+                            ],
+                            "roi": [
+                                48,
+                                499,
+                                163,
+                                79
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "粼粼夏色行",
+                    "pipeline_override": {
+                        "ClickLimitActivity": {
+                            "enabled": false
+                        },
+                        "EnterActivityMain": {
+                            "template": "Activity/SummerSplash/粼粼夏色行活动入口__959_442_231_84__909_392_331_184.png"
+                        },
+                        "ActivityMain": {
+                            "template": "Activity/SummerSplash/粼粼夏色行主界面__47_470_631_213__0_420_728_300.png"
+                        },
+                        "EnterActivityDungeon": {
+                            "template": "Activity/SummerSplash/粼粼夏色行副本入口__973_453_162_55__923_403_262_155.png",
+                        },
+                        "ActivityDungeonMain": {
+                            "template": "Activity/SummerSplash/粼粼夏色行副本主界面__226_78_100_48__176_28_200_148.png",
+                            "on_error": [
+                                "ActivityTask"
+                            ]
+                        },
+                        "ActivityDungeonReturn": {
+                            "template": "Activity/SummerSplash/粼粼夏色行副本主界面__226_78_100_48__176_28_200_148.png"
+                        },
+                        "ActivitySoloDungeon1": {
+                            "roi": [
+                                492,
+                                436,
+                                144,
+                                87
+                            ]
+                        },
+                        "ActivitySoloDungeon2": {
+                            "roi": [
+                                801,
+                                445,
+                                146,
+                                86
+                            ]
+                        },
+                        "ActivitySoloDungeon3": {
+                            "enabled": false
+                        },
+                        "EnterActivityTask": {
+                            "expected": [
+                                "假日",
+                                "手记"
+                            ],
+                            "roi": [
+                                37,
+                                212,
+                                95,
+                                88
+                            ]
                         }
                     }
                 }

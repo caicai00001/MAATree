@@ -1,0 +1,258 @@
+{
+    "ActivityDungeon": {
+        "next": [
+            "EnterActivityDungeon",
+            "ActivityDungeonMain",
+            "[JumpBack]EnterActivity"
+        ]
+    },
+    "EnterActivityDungeon": {
+        "recognition": "TemplateMatch",
+        "template": "Activity/AngelGospel/天使福音副本入口__979_191_186_46__929_141_286_146.png",
+        "action": "Click",
+        "next": [
+            "ActivityDungeonMain",
+            "EnterActivityDungeon"
+        ]
+    },
+    "ActivityDungeonMain": {
+        "recognition": "TemplateMatch",
+        "template": "Activity/AngelGospel/天使福音副本主界面__225_59_153_152__175_9_253_252.png",
+        "action": "Click",
+        "next": [
+            "ToError",
+            "ActivitySoloConfirm",
+            "ActivityMultiConfirm",
+            "[JumpBack]ActivitySoloMultiSwitch"
+        ],
+        "timeout": 3000,
+        "on_error": [
+            "ActivityShop"
+        ]
+    },
+    "ActivityDungeonReturn": {
+        "recognition": "TemplateMatch",
+        "template": "Activity/AngelGospel/天使福音副本主界面__225_59_153_152__175_9_253_252.png",
+        "action": "Click",
+        "next": [
+            "ActivityReturnButton"
+        ]
+    },
+    "ActivitySoloConfirm": {
+        "recognition": "TemplateMatch",
+        "template": "Activity/AngelGospel/天使福音Ap图标__1082_13_50_49__1032_0_150_112.png",
+        "roi": [
+            1073,
+            10,
+            69,
+            61
+        ],
+        "next": [
+            "ActivitySoloDungeon1",
+            "ActivitySoloDungeon2",
+            "ActivitySoloDungeon3",
+            "ActivityDungeonMain"
+        ],
+        "max_hit": 3,
+        "timeout": 2000
+    },
+    "ActivitySoloMultiSwitch": {
+        "recognition": "OCR",
+        "expected": [
+            "单",
+            "人"
+        ],
+        "roi": [
+            439,
+            646,
+            107,
+            40
+        ],
+        "action": "Click",
+        "max_hit": 5
+    },
+    "ActivitySoloDungeon1": {
+        "recognition": "OCR",
+        "expected": [
+            "困",
+            "难"
+        ],
+        "roi": [
+            210,
+            367,
+            138,
+            61
+        ],
+        "action": "Click",
+        "next": [
+            "ActivitySoloPrepare"
+        ],
+        "max_hit": 1
+    },
+    "ActivitySoloDungeon2": {
+        "recognition": "OCR",
+        "expected": [
+            "困",
+            "难"
+        ],
+        "roi": [
+            511,
+            370,
+            138,
+            61
+        ],
+        "action": "Click",
+        "next": [
+            "ActivitySoloPrepare"
+        ],
+        "max_hit": 1
+    },
+    "ActivitySoloDungeon3": {
+        "recognition": "OCR",
+        "expected": [
+            "困",
+            "难"
+        ],
+        "roi": [
+            816,
+            366,
+            138,
+            61
+        ],
+        "action": "Click",
+        "next": [
+            "ActivitySoloPrepare"
+        ],
+        "max_hit": 1
+    },
+    "ActivitySoloPrepare": {
+        "recognition": "OCR",
+        "expected": [
+            "开",
+            "启",
+            "挑",
+            "战"
+        ],
+        "roi": [
+            1046,
+            604,
+            218,
+            77
+        ],
+        "action": "Click",
+        "next": [
+            "StartBattle",
+            "ActivitySoloPrepare",
+            "[JumpBack]AddAPMain"
+        ]
+    },
+    "ActivityMultiConfirm": {
+        "recognition": "TemplateMatch",
+        "template": "Activity/AngelGospel/天使福音Bp图标__1082_13_50_49__1032_0_150_112.png",
+        "roi": [
+            1082,
+            13,
+            50,
+            49
+        ],
+        "next": [
+            "ActivityMultiDungeon1",
+            "ActivityMultiDungeon2",
+            "ActivityMultiDungeon3",
+            "ActivityDungeonMain"
+        ],
+        "max_hit": 3,
+        "timeout": 2000
+    },
+    "ActivityMultiDungeon1": {
+        "recognition": "OCR",
+        "expected": [
+            "困",
+            "难"
+        ],
+        "roi": [
+            210,
+            367,
+            138,
+            61
+        ],
+        "action": "Click",
+        "next": [
+            "ActivityMultiPrepare"
+        ],
+        "max_hit": 1
+    },
+    "ActivityMultiDungeon2": {
+        "recognition": "OCR",
+        "expected": [
+            "困",
+            "难"
+        ],
+        "roi": [
+            511,
+            370,
+            138,
+            61
+        ],
+        "action": "Click",
+        "next": [
+            "ActivityMultiPrepare"
+        ],
+        "max_hit": 1
+    },
+    "ActivityMultiDungeon3": {
+        "recognition": "OCR",
+        "expected": [
+            "困",
+            "难"
+        ],
+        "roi": [
+            816,
+            366,
+            138,
+            61
+        ],
+        "action": "Click",
+        "next": [
+            "ActivityMultiPrepare"
+        ],
+        "max_hit": 1
+    },
+    "ActivityMultiPrepare": {
+        "recognition": "OCR",
+        "expected": [
+            "开",
+            "启",
+            "挑",
+            "战"
+        ],
+        "roi": [
+            1046,
+            604,
+            218,
+            77
+        ],
+        "action": "Click",
+        "next": [
+            "StartRoomBattle",
+            "ActivityMultiPrepare"
+        ]
+    },
+    "ActivityMultiContinue": {
+        "recognition": "OCR",
+        "expected": [
+            "困",
+            "难"
+        ],
+        "roi": [
+            158,
+            307,
+            310,
+            165
+        ],
+        "next": [
+            "ActivityDungeonMain",
+            "[JumpBack]ActivityReturnButton"
+        ]
+    }
+}
