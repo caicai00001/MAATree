@@ -2,13 +2,11 @@
     "开始扫荡一次素材关卡": {
         "next": [
             "确认是否在主页_扫荡一次素材关卡",
-            "返回主页检测"
-        ],
-        "interrupt": [
-            "退出"
+            "返回主页检测",
+            "[JumpBack]退出"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "确认是否在主页_扫荡一次素材关卡": {
         "recognition": "TemplateMatch",
@@ -19,7 +17,7 @@
             "点击素材"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击素材": {
         "recognition": "OCR",
@@ -32,9 +30,9 @@
         ],
         "action": "Click",
         "post_delay": 800,
-        "next": "点击经验素材本",
+        "next": ["点击经验素材本"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击经验素材本": {
         "recognition": "TemplateMatch",
@@ -51,7 +49,7 @@
             "点击训练特级"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击训练特级": {
         "recognition": "TemplateMatch",
@@ -66,9 +64,9 @@
         "threshold": 0.85,
         "post_delay": 500,
         "order_by": "Score",
-        "next": "点击扫荡_扫荡一次素材关卡",
+        "next": ["点击扫荡_扫荡一次素材关卡"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击扫荡_扫荡一次素材关卡": {
         "recognition": "OCR",
@@ -87,7 +85,7 @@
             "点击扫荡_扫荡一次素材关卡"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "是否为1次_扫荡一次素材关卡": {
         "recognition": "TemplateMatch",
@@ -103,7 +101,7 @@
             "点击确定_扫荡一次素材关卡"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击确定_扫荡一次素材关卡": {
         "recognition": "OCR",
@@ -119,7 +117,7 @@
             "等待扫荡结束1次"
         ],
         "timeout": 8000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击MIN1": {
         "recognition": "OCR",
@@ -135,7 +133,7 @@
             "点击确定_扫荡一次素材关卡"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "等待扫荡结束1次": {
         "recognition": "OCR",
@@ -159,9 +157,9 @@
         "threshold": 0.85,
         "post_delay": 500,
         "order_by": "Score",
-        "next": "点击扫荡_扫荡二次素材关卡",
+        "next": ["点击扫荡_扫荡二次素材关卡"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击扫荡_扫荡二次素材关卡": {
         "recognition": "OCR",
@@ -180,7 +178,7 @@
             "点击扫荡_扫荡二次素材关卡"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "是否为1次_扫荡二次素材关卡": {
         "recognition": "TemplateMatch",
@@ -196,7 +194,7 @@
             "点击确定_扫荡二次素材关卡"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击确定_扫荡二次素材关卡": {
         "recognition": "OCR",
@@ -212,7 +210,7 @@
             "等待扫荡结束2次"
         ],
         "timeout": 8000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击MIN2": {
         "recognition": "OCR",
@@ -228,7 +226,7 @@
             "点击确定_扫荡二次素材关卡"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "等待扫荡结束2次": {
         "recognition": "OCR",

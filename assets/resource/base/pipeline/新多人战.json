@@ -5,7 +5,7 @@
             "返回主页检测"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "加入战斗": {
         "recognition": "OCR",
@@ -26,7 +26,7 @@
             "加入战斗"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "切换到中途模式": {
         "recognition": "OCR",
@@ -38,9 +38,9 @@
             74
         ],
         "action": "Click",
-        "next": "加入战斗",
+        "next": ["加入战斗"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击自动战斗": {
         "recognition": "TemplateMatch",
@@ -52,7 +52,7 @@
             "点击连战设置"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "打开off": {
         "recognition": "TemplateMatch",
@@ -69,7 +69,7 @@
             "点击连战设置"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击连战设置": {
         "recognition": "TemplateMatch",
@@ -86,7 +86,7 @@
             "点击连战设置"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击连战次数": {
         "recognition": "TemplateMatch",
@@ -108,28 +108,28 @@
             "删除前连战次数1"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "删除前连战次数1": {
         "action": "Key",
         "key": 67,
         "post_delay": 50,
         "pre_delay": 10,
-        "next": "删除前连战次数2"
+        "next": ["删除前连战次数2"]
     },
     "删除前连战次数2": {
         "action": "Key",
         "key": 67,
         "post_delay": 50,
         "pre_delay": 10,
-        "next": "删除前连战次数3"
+        "next": ["删除前连战次数3"]
     },
     "删除前连战次数3": {
         "action": "Key",
         "key": 67,
         "post_delay": 50,
         "pre_delay": 10,
-        "next": "输入连战次数"
+        "next": ["输入连战次数"]
     },
     "输入连战次数": {
         "action": "InputText",
@@ -138,7 +138,7 @@
             "点击一次"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击一次": {
         "action": "Click",
@@ -153,7 +153,7 @@
             "点击确定"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "打开自动再战": {
         "recognition": "TemplateMatch",
@@ -184,7 +184,7 @@
             "检测已选中任务1-否"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务1-是": {
         "recognition": "TemplateMatch",
@@ -202,7 +202,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务1-否": {
         "recognition": "TemplateMatch",
@@ -220,7 +220,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务2-是": {
         "recognition": "TemplateMatch",
@@ -238,7 +238,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务2-否": {
         "recognition": "TemplateMatch",
@@ -256,7 +256,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务3-是": {
         "recognition": "TemplateMatch",
@@ -274,7 +274,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务3-否": {
         "recognition": "TemplateMatch",
@@ -292,7 +292,7 @@
             "清空关卡选择"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务4-是": {
         "recognition": "TemplateMatch",
@@ -309,7 +309,7 @@
             "点击开始自动战斗"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测已选中任务4-否": {
         "recognition": "TemplateMatch",
@@ -327,7 +327,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "清空关卡选择": {
         "recognition": "OCR",
@@ -349,7 +349,7 @@
             "检测是否清空关卡选择"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测是否清空关卡选择": {
         "recognition": "TemplateMatch",
@@ -362,12 +362,12 @@
         ],
         "action": "Click",
         "next": [
-            "选择关卡1_0"
+            "选择关卡1_0",
+            "[JumpBack]dr向下滑动"
         ],
         "post_delay": 1000,
-        "interrupt": "dr向下滑动",
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "dr向下滑动": {
         "recognition": "OCR",
@@ -434,8 +434,8 @@
         "post_delay": 10,
         "pre_delay": 10,
         "timeout": 3000,
-        "next": "选择关卡1_1",
-        "on_error": "stopapp"
+        "next": ["选择关卡1_1"],
+        "on_error": ["stopapp"]
     },
     "选择关卡1_1": {
         "recognition": "TemplateMatch",
@@ -451,14 +451,14 @@
         "threshold": 0.87,
         "post_delay": 200,
         "pre_delay": 200,
-        "next": "选择关卡2_-2",
+        "next": ["选择关卡2_-2"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡2_-2": {
-        "next": "选择关卡2_-1",
+        "next": ["选择关卡2_-1"],
         "timeout": 300,
-        "on_error": "选择关卡2_0_上滑0"
+        "on_error": ["选择关卡2_0_上滑0"]
     },
     "选择关卡2_-1": {
         "recognition": "OCR",
@@ -485,27 +485,27 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡2_0_下滑0": {
         "next": [
-            "选择关卡2_0_下滑"
+            "选择关卡2_0_下滑",
+            "[JumpBack]dr向下滑动"
         ],
-        "interrupt": "dr向下滑动",
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡2_0_上滑0": {
         "next": [
-            "选择关卡2_0_上滑"
+            "选择关卡2_0_上滑",
+            "[JumpBack]dr向上滑动"
         ],
-        "interrupt": "dr向上滑动",
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡2_0_上滑": {
         "recognition": "OCR",
@@ -526,7 +526,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡2_0_下滑": {
         "recognition": "OCR",
@@ -547,7 +547,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡2_1_上滑": {
         "recognition": "TemplateMatch",
@@ -563,9 +563,9 @@
         "threshold": 0.87,
         "post_delay": 200,
         "pre_delay": 200,
-        "next": "选择关卡3_-2",
+        "next": ["选择关卡3_-2"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡2_1_下滑": {
         "recognition": "TemplateMatch",
@@ -581,14 +581,14 @@
         "threshold": 0.87,
         "post_delay": 200,
         "pre_delay": 200,
-        "next": "选择关卡3_-2",
+        "next": ["选择关卡3_-2"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡3_-2": {
-        "next": "选择关卡3_-1",
+        "next": ["选择关卡3_-1"],
         "timeout": 300,
-        "on_error": "选择关卡3_0_上滑0"
+        "on_error": ["选择关卡3_0_上滑0"]
     },
     "选择关卡3_-1": {
         "recognition": "OCR",
@@ -614,27 +614,27 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡3_0_下滑0": {
         "next": [
-            "选择关卡3_0_下滑"
+            "选择关卡3_0_下滑",
+            "[JumpBack]dr向下滑动"
         ],
-        "interrupt": "dr向下滑动",
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡3_0_上滑0": {
         "next": [
-            "选择关卡3_0_上滑"
+            "选择关卡3_0_上滑",
+            "[JumpBack]dr向上滑动"
         ],
-        "interrupt": "dr向上滑动",
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡3_0_上滑": {
         "recognition": "OCR",
@@ -655,7 +655,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡3_0_下滑": {
         "recognition": "OCR",
@@ -676,7 +676,7 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择关卡3_1_上滑": {
         "recognition": "TemplateMatch",
@@ -693,8 +693,8 @@
         "post_delay": 200,
         "pre_delay": 200,
         "timeout": 3000,
-        "next": "dr确定_开始前",
-        "on_error": "stopapp"
+        "next": ["dr确定_开始前"],
+        "on_error": ["stopapp"]
     },
     "选择关卡3_1_下滑": {
         "recognition": "TemplateMatch",
@@ -710,9 +710,9 @@
         "threshold": 0.87,
         "post_delay": 200,
         "pre_delay": 200,
-        "next": "dr确定_开始前",
+        "next": ["dr确定_开始前"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "dr确定_开始前": {
         "recognition": "OCR",
@@ -720,9 +720,9 @@
         "action": "Click",
         "post_delay": 200,
         "pre_delay": 200,
-        "next": "点击开始自动战斗",
+        "next": ["点击开始自动战斗"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击开始自动战斗": {
         "recognition": "OCR",
@@ -736,7 +736,7 @@
             "xdr识别进入房间1",
             "搜索中"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr识别进入房间": {
         "recognition": "TemplateMatch",
@@ -755,7 +755,7 @@
             "战斗胜利"
         ],
         "rate_limit": 1000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr识别进入房间1": {
         "recognition": "TemplateMatch",
@@ -774,7 +774,7 @@
             "搜索中"
         ],
         "rate_limit": 1500,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别是否到达限定次数": {
         "recognition": "OCR",
@@ -791,7 +791,7 @@
             "限次_战斗胜利"
         ],
         "timeout": 120000,
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "限次_战斗胜利": {
         "recognition": "TemplateMatch",
@@ -807,7 +807,7 @@
         "next": [
             "限次_战斗确认"
         ],
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "限次_战斗确认": {
         "recognition": "TemplateMatch",
@@ -845,7 +845,7 @@
             "xdr超时跳车4",
             "搜索中"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "战斗胜利": {
         "recognition": "TemplateMatch",
@@ -866,7 +866,7 @@
             "房间已满",
             "搜索中"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr战斗超时综合识别": {
         "timeout": 10000,
@@ -878,7 +878,7 @@
             "房间已满",
             "搜索中"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr阵亡": {
         "recognition": "TemplateMatch",
@@ -895,7 +895,7 @@
             "搜索中",
             "xdr超时跳车4"
         ],
-        "on_error": "xdr战斗超时综合识别"
+        "on_error": ["xdr战斗超时综合识别"]
     },
     "xdr阵亡0": {
         "recognition": "TemplateMatch",
@@ -920,10 +920,10 @@
             "搜索中",
             "xdr识别进入房间",
             "xdr识别进入房间1",
-            "返回主页检测"
+            "返回主页检测",
+            "[JumpBack]xdr战斗确认"
         ],
-        "interrupt": "xdr战斗确认",
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "返回主页检测_次数限制专用": {
         "recognition": "TemplateMatch",
@@ -935,8 +935,8 @@
             245,
             74
         ],
-        "next": "停止",
-        "on_error": "stopapp"
+        "next": ["停止"],
+        "on_error": ["stopapp"]
     },
     "搜索中": {
         "recognition": "TemplateMatch",
@@ -959,7 +959,7 @@
             "房间未找到"
         ],
         "timeout": 35000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "房间未找到": {
         "recognition": "OCR",
@@ -977,7 +977,7 @@
             "xdr识别进入房间1"
         ],
         "timeout": 35000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "战斗未找到": {
         "recognition": "TemplateMatch",
@@ -995,7 +995,7 @@
             "xdr识别进入房间1"
         ],
         "timeout": 35000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "房间已满": {
         "recognition": "OCR",
@@ -1013,7 +1013,7 @@
             "xdr识别进入房间1"
         ],
         "timeout": 35000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr超时跳车0": {
         "recognition": "TemplateMatch",
@@ -1029,7 +1029,7 @@
         "next": [
             "xdr战斗确认"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr超时跳车1": {
         "recognition": "TemplateMatch",
@@ -1046,7 +1046,7 @@
             "xdr超时跳车2",
             "xdr超时跳车1"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr超时跳车2": {
         "recognition": "TemplateMatch",
@@ -1064,7 +1064,7 @@
             "xdr超时跳车2",
             "xdr超时跳车1"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr超时跳车3": {
         "recognition": "OCR",
@@ -1090,7 +1090,7 @@
             "xdr超时跳车2",
             "xdr超时跳车1"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "xdr超时跳车4": {
         "recognition": "OCR",
@@ -1112,6 +1112,6 @@
             "房间已满",
             "战斗胜利"
         ],
-        "on_error": "开始多人战-9.25新版"
+        "on_error": ["开始多人战-9.25新版"]
     }
 }

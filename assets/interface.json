@@ -38,6 +38,9 @@
             "name": "启动游戏",
             "entry": "启动游戏",
             "pipeline_override": {
+                "礼包检测": {
+                    "next": []
+                },
                 "等待进入": {
                     "next": "主页检测"
                 },
@@ -1799,7 +1802,10 @@
                             "template": "Multi/普兰__28_402_111_86__0_352_189_186.png"
                         },
                         "选择关卡2_0_上滑0": {
-                            "interrupt": "dr向下滑动"
+                            "next": [
+                                "选择关卡2_0_上滑",
+                                "[JumpBack]dr向下滑动"
+                            ]
                         }
                     }
                 },
@@ -2703,7 +2709,10 @@
                             "template": "Multi/普兰__28_402_111_86__0_352_189_186.png"
                         },
                         "选择关卡3_0_上滑0": {
-                            "interrupt": "dr向下滑动"
+                            "next": [
+                                "选择关卡3_0_上滑",
+                                "[JumpBack]dr向下滑动"
+                            ]
                         }
                     }
                 },
@@ -6045,8 +6054,10 @@
                     "pipeline_override": {
                         "SelectMaterailFirst": {
                             "template": "MaterailSweep/职业试炼__449_502_99_34__399_452_199_134.png",
-                            "interrupt": [
-                                "SelectMaterailSwipeRight"
+                            "next": [
+                                "SelectMaterailSecond",
+                                "SelectMaterailFirst",
+                                "[JumpBack]SelectMaterailSwipeRight"
                             ]
                         },
                         "SelectMaterailSecond": {
@@ -6128,8 +6139,10 @@
                     "pipeline_override": {
                         "SelectMaterailFirst": {
                             "template": "MaterailSweep/职业试炼__449_502_99_34__399_452_199_134.png",
-                            "interrupt": [
-                                "SelectMaterailSwipeLeft"
+                            "next": [
+                                "SelectMaterailSecond",
+                                "SelectMaterailFirst",
+                                "[JumpBack]SelectMaterailSwipeLeft"
                             ]
                         },
                         "SelectMaterailSecond": {

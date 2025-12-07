@@ -5,23 +5,27 @@
           "返回主页检测"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": [
+          "stopapp"
+        ]
     },
     "领取物质": {
         "recognition": "TemplateMatch",
         "green_mask": true,
         "template": "Activity/活动.png",
         "next": [
-          "点击每日物资"
+            "点击每日物资",
+            "[JumpBack]wz向上滑动"
         ],
-        "interrupt":"wz向上滑动",
         "roi" : [5,135,236,297],
         "threshold": 0.8,
         "action": "Click",
         "pre_delay": 300,
         "post_delay": 300,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": [
+          "stopapp"
+        ]
     },
     "wz向上滑动": {
         "action": "Swipe",
@@ -42,7 +46,12 @@
     "点击每日物资":{
       "recognition": "OCR",
       "expected" : "每日物资",
-      "roi" : [107,342,187,198],
+      "roi": [
+        107,
+        75,
+        187,
+        579
+      ],
       "next": [
         "12点每日物资待领取",
         "18点每日物资待领取",
@@ -53,38 +62,44 @@
       "pre_delay": 150,
       "post_delay": 150,
       "timeout": 3000,
-      "on_error": "stopapp"
+      "on_error": [
+        "stopapp"
+      ]
     },
     "12点每日物资待领取":{
       "recognition": "TemplateMatch",
       "template": "Activity/每日待领取.png",
       "roi" : [518,527,164,85],
       "next": [
-        "12点每日物资待领取",
-        "18点每日物资待领取",
-        "每日领取关闭"
+          "12点每日物资待领取",
+          "18点每日物资待领取",
+          "每日领取关闭",
+          "[JumpBack]wz点击空白处"
       ],
-      "interrupt": "wz点击空白处",
       "action": "Click",
       "pre_delay": 150,
       "post_delay": 150,
       "timeout": 3000,
-      "on_error": "stopapp"
+      "on_error": [
+        "stopapp"
+      ]
     },
     "18点每日物资待领取": {
       "recognition": "TemplateMatch",
       "template": "Activity/每日待领取.png",
       "roi" : [907,532,160,67],
       "next": [
-        "18点每日物资待领取",
-        "每日领取关闭"
+          "18点每日物资待领取",
+          "每日领取关闭",
+          "[JumpBack]wz点击空白处"
       ],
-      "interrupt": "wz点击空白处",
       "action": "Click",
       "pre_delay": 150,
       "post_delay": 150,
       "timeout": 3000,
-      "on_error": "stopapp"
+      "on_error": [
+        "stopapp"
+      ]
     },
     "wz点击空白处": {
       "recognition": "OCR",
@@ -100,6 +115,8 @@
       "pre_delay": 50,
       "post_delay": 50,
       "timeout": 300,
-      "on_error": "停止"
+      "on_error": [
+        "停止"
+      ]
     }
 }

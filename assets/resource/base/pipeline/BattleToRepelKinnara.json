@@ -6,13 +6,11 @@
       "返回主页检测",
       "teamBattleKinnara",
       "recognizeEnteringTheRoom_1_Fire",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "退出"
+      "网络连接断开",
+      "[JumpBack]退出"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "Kinnara_detectionHome": {
     "recognition": "TemplateMatch",
@@ -25,7 +23,7 @@
     ],
     "action": "Click",
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "clickHighDifficulty":{
     "recognition": "OCR",
@@ -39,7 +37,7 @@
     ],
     "post_delay": 400,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "clickKinnara": {
     "recognition": "TemplateMatch",
@@ -52,7 +50,7 @@
     ],
     "post_delay": 400,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "clickJoinTheBattle": {
     "recognition": "OCR",
@@ -68,7 +66,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //等待
   "quickJoinWaiting": {
@@ -82,7 +80,7 @@
       "网络连接断开"
     ],
     "timeout": 35000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //失败
   "quickJoinFailure": {
@@ -96,7 +94,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "clickToPrepare": {
     "recognition": "OCR",
@@ -110,7 +108,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "cancelPreparation": {
     "recognition": "OCR",
@@ -124,7 +122,7 @@
     ],
     "rate_limit": 1500,
     "timeout": 10000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "teamBattleKinnara": {
     "recognition": "TemplateMatch",
@@ -146,7 +144,7 @@
       "网络连接断开"
     ],
     "timeout": 4000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "Envoy_one": {
     "recognition": "TemplateMatch",
@@ -169,7 +167,7 @@
       "offDefaultMecha_Wind"
     ],
     "timeout": 4000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "Envoy_three": {
     "recognition": "TemplateMatch",
@@ -181,7 +179,7 @@
       "offDefaultMecha_Fire"
     ],
     "timeout": 4000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "Envoy_four": {
     "recognition": "TemplateMatch",
@@ -193,7 +191,7 @@
       "offDefaultMecha_Dark"
     ],
     "timeout": 4000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "Envoy_five": {
     "recognition": "TemplateMatch",
@@ -205,7 +203,7 @@
       "offDefaultMecha_Light"
     ],
     "timeout": 4000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "Envoy_six": {
     "recognition": "TemplateMatch",
@@ -217,7 +215,7 @@
       "offDefaultMecha_Water"
     ],
     "timeout": 4000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "Envoy_seven": {
     "recognition": "TemplateMatch",
@@ -230,7 +228,7 @@
     "recommended roi" : [574,300,125,117],
     "action": "Click",
     "timeout": 4000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
 
   "clickOnTheBlankAreaKinnara": {
@@ -238,7 +236,7 @@
     "expected": "空白",
     "action": "Click",
     "roi" : [539,587,224,107],
-    "next": "endTheCampaign"
+    "next": ["endTheCampaign"]
   },
 
   "endTheCampaign": {
@@ -246,7 +244,7 @@
     "expected" : "结束讨伐",
     "action": "Click",
     "roi" : [1084,609,146,68],
-    "next": "停止"
+    "next": ["停止"]
   },
 
   "slideToTheRight_Kinnara": {
@@ -272,15 +270,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "changeLineup_Fire",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offDefaultMecha_Fire"
+    "on_error": ["offDefaultMecha_Fire"]
   },
   "changeLineup_Fire": {
     "recognition": "TemplateMatch",
@@ -297,7 +293,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Fire_Click": {
     "recognition": "TemplateMatch",
@@ -313,7 +309,7 @@
       "changeLineup_Fire_confirm",
       "changeLineup_Fire_Click"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Fire_confirm": {
     "recognition": "TemplateMatch",
@@ -330,7 +326,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第二步，选择出战属性有1~6个队伍
   "dispatchTeam_Fire": {
@@ -341,7 +337,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第三步，选择完成后，检测支援虚数体栏位是否为"EMPT"。
   "selectEmpty_Fire": {
@@ -356,7 +352,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //备选方案1
   "offMecha_Fire": {
@@ -364,15 +360,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "offChangeLineup_Fire",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offMecha_Fire"
+    "on_error": ["offMecha_Fire"]
   },
   //备选方案2
   "offChangeLineup_Fire": {
@@ -386,7 +380,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "offChangeLineup_Fire"
+    "on_error": ["offChangeLineup_Fire"]
   },
   //第四步，点击出战后进入虚数体选择界面。有满破王甲150，高破王甲150，满破有方甲150，高破方甲130
   "DefaultMecha_Fire": {
@@ -402,7 +396,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第五步，全部确认好之后点击出战
   "dispatchCombat_Fire": {
@@ -416,7 +410,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_Fire": {
     "recognition": "TemplateMatch",
@@ -434,7 +428,7 @@
       "battleVictory_Fire",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_1_Fire": {
     "recognition": "OCR",
@@ -447,7 +441,7 @@
       "网络连接断开"
     ],
     "rate_limit": 1500,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleVictory_Fire": {
     "recognition": "TemplateMatch",
@@ -463,7 +457,7 @@
       "battleConfirmation_Fire",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "deathInBattle_Fire": {
     "recognition": "TemplateMatch",
@@ -474,7 +468,7 @@
       "battleVictory_Fire",
       "网络连接断开"
     ],
-    "on_error": "deathInBattle_Fire"
+    "on_error": ["deathInBattle_Fire"]
   },
   "battleConfirmation_Fire": {
     "recognition": "TemplateMatch",
@@ -491,12 +485,10 @@
     "next": [
       "teamBattleKinnara",
       "battleConfirmation_Fire",
-      "网络连接断开"
+      "网络连接断开",
+      "[JumpBack]clickOnTheBlankAreaKinnara"
     ],
-    "interrupt": [
-      "clickOnTheBlankAreaKinnara"
-    ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
 
   //------------出战队伍设置水--------------
@@ -506,15 +498,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "changeLineup_Water",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offDefaultMecha_Water"
+    "on_error": ["offDefaultMecha_Water"]
   },
   "changeLineup_Water": {
     "recognition": "TemplateMatch",
@@ -531,7 +521,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Water_Click": {
     "recognition": "TemplateMatch",
@@ -547,7 +537,7 @@
       "changeLineup_Water_confirm",
       "changeLineup_Water_Click"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Water_confirm": {
     "recognition": "TemplateMatch",
@@ -564,7 +554,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第二步，选择出战属性有1~6个队伍
   "dispatchTeam_Water": {
@@ -575,7 +565,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第三步，选择完成后，检测支援虚数体栏位是否为"EMPT"。
   "selectEmpty_Water": {
@@ -590,7 +580,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //备选方案1
   "offMecha_Water": {
@@ -598,15 +588,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "offChangeLineup_Water",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offMecha_Water"
+    "on_error": ["offMecha_Water"]
   },
   //备选方案2
   "offChangeLineup_Water": {
@@ -620,7 +608,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "offChangeLineup_Water"
+    "on_error": ["offChangeLineup_Water"]
   },
   //第四步，点击出战后进入虚数体选择界面。有满破王甲150，高破王甲150，满破有方甲150，高破方甲130
   "DefaultMecha_Water": {
@@ -636,7 +624,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第五步，全部确认好之后点击出战
   "dispatchCombat_Water": {
@@ -650,7 +638,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_Water": {
     "recognition": "TemplateMatch",
@@ -668,7 +656,7 @@
       "battleVictory_Fire",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_1_Water": {
     "recognition": "OCR",
@@ -681,7 +669,7 @@
       "网络连接断开"
     ],
     "rate_limit": 1500,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleVictory_Water": {
     "recognition": "TemplateMatch",
@@ -697,7 +685,7 @@
       "battleConfirmation_Water",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "deathInBattle_Water": {
     "recognition": "TemplateMatch",
@@ -708,7 +696,7 @@
       "battleVictory_Water",
       "网络连接断开"
     ],
-    "on_error": "deathInBattle_Water"
+    "on_error": ["deathInBattle_Water"]
   },
   "battleConfirmation_Water": {
     "recognition": "TemplateMatch",
@@ -725,12 +713,10 @@
     "next": [
       "teamBattleKinnara",
       "battleConfirmation_Water",
-      "网络连接断开"
+      "网络连接断开",
+      "[JumpBack]clickOnTheBlankAreaKinnara"
     ],
-    "interrupt": [
-      "clickOnTheBlankAreaKinnara"
-    ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
 
   //------------出战队伍设置土--------------
@@ -740,15 +726,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "changeLineup_Soil",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offDefaultMecha_Soil"
+    "on_error": ["offDefaultMecha_Soil"]
   },
   "changeLineup_Soil": {
     "recognition": "TemplateMatch",
@@ -765,7 +749,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Soil_Click": {
     "recognition": "TemplateMatch",
@@ -781,7 +765,7 @@
       "changeLineup_Soil_confirm",
       "changeLineup_Soil_Click"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Soil_confirm": {
     "recognition": "TemplateMatch",
@@ -798,7 +782,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第二步，选择出战属性有1~6个队伍
   "dispatchTeam_Soil": {
@@ -809,7 +793,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第三步，选择完成后，检测支援虚数体栏位是否为"EMPT"。
   "selectEmpty_Soil": {
@@ -824,7 +808,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //备选方案1
   "offMecha_Soil": {
@@ -832,15 +816,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "offChangeLineup_Soil",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offMecha_Soil"
+    "on_error": ["offMecha_Soil"]
   },
   //备选方案2
   "offChangeLineup_Soil": {
@@ -854,7 +836,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "offChangeLineup_Soil"
+    "on_error": ["offChangeLineup_Soil"]
   },
   //第四步，点击出战后进入虚数体选择界面。有满破王甲150，高破王甲150，满破有方甲150，高破方甲130
   "DefaultMecha_Soil": {
@@ -870,7 +852,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第五步，全部确认好之后点击出战
   "dispatchCombat_Soil": {
@@ -884,7 +866,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_Soil": {
     "recognition": "TemplateMatch",
@@ -902,7 +884,7 @@
       "battleVictory_Soil",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_1_Soil": {
     "recognition": "OCR",
@@ -915,7 +897,7 @@
       "网络连接断开"
     ],
     "rate_limit": 1500,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleVictory_Soil": {
     "recognition": "TemplateMatch",
@@ -931,7 +913,7 @@
       "battleConfirmation_Soil",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "deathInBattle_Soil": {
     "recognition": "TemplateMatch",
@@ -942,7 +924,7 @@
       "battleVictory_Soil",
       "网络连接断开"
     ],
-    "on_error": "deathInBattle_Soil"
+    "on_error": ["deathInBattle_Soil"]
   },
   "battleConfirmation_Soil": {
     "recognition": "TemplateMatch",
@@ -959,12 +941,10 @@
     "next": [
       "teamBattleKinnara",
       "battleConfirmation_Soil",
-      "网络连接断开"
+      "网络连接断开",
+      "[JumpBack]clickOnTheBlankAreaKinnara"
     ],
-    "interrupt": [
-      "clickOnTheBlankAreaKinnara"
-    ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
 
   //------------出战队伍设置风--------------
@@ -974,15 +954,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "changeLineup_Wind",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offDefaultMecha_Wind"
+    "on_error": ["offDefaultMecha_Wind"]
   },
   "changeLineup_Wind": {
     "recognition": "TemplateMatch",
@@ -999,7 +977,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Wind_Click": {
     "recognition": "TemplateMatch",
@@ -1015,7 +993,7 @@
       "changeLineup_Wind_confirm",
       "changeLineup_Wind_Click"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Wind_confirm": {
     "recognition": "TemplateMatch",
@@ -1032,7 +1010,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第二步，选择出战属性有1~6个队伍
   "dispatchTeam_Wind": {
@@ -1043,7 +1021,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第三步，选择完成后，检测支援虚数体栏位是否为"EMPT"。
   "selectEmpty_Wind": {
@@ -1058,7 +1036,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //备选方案1
   "offMecha_Wind": {
@@ -1066,15 +1044,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "offChangeLineup_Wind",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offMecha_Wind"
+    "on_error": ["offMecha_Wind"]
   },
   //备选方案2
   "offChangeLineup_Wind": {
@@ -1088,7 +1064,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "offChangeLineup_Wind"
+    "on_error": ["offChangeLineup_Wind"]
   },
   //第四步，点击出战后进入虚数体选择界面。有满破王甲150，高破王甲150，满破有方甲150，高破方甲130
   "DefaultMecha_Wind": {
@@ -1104,7 +1080,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第五步，全部确认好之后点击出战
   "dispatchCombat_Wind": {
@@ -1118,7 +1094,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_Wind": {
     "recognition": "TemplateMatch",
@@ -1136,7 +1112,7 @@
       "battleVictory_Wind",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_1_Wind": {
     "recognition": "OCR",
@@ -1149,7 +1125,7 @@
       "网络连接断开"
     ],
     "rate_limit": 1500,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleVictory_Wind": {
     "recognition": "TemplateMatch",
@@ -1165,7 +1141,7 @@
       "battleConfirmation_Wind",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "deathInBattle_Wind": {
     "recognition": "TemplateMatch",
@@ -1176,7 +1152,7 @@
       "battleVictory_Wind",
       "网络连接断开"
     ],
-    "on_error": "deathInBattle_Wind"
+    "on_error": ["deathInBattle_Wind"]
   },
   "battleConfirmation_Wind": {
     "recognition": "TemplateMatch",
@@ -1193,12 +1169,10 @@
     "next": [
       "teamBattleKinnara",
       "battleConfirmation_Wind",
-      "网络连接断开"
+      "网络连接断开",
+      "[JumpBack]clickOnTheBlankAreaKinnara"
     ],
-    "interrupt": [
-      "clickOnTheBlankAreaKinnara"
-    ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
 
   //------------出战队伍设置光--------------
@@ -1208,15 +1182,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "changeLineup_Light",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offDefaultMecha_Light"
+    "on_error": ["offDefaultMecha_Light"]
   },
   "changeLineup_Light": {
     "recognition": "TemplateMatch",
@@ -1233,7 +1205,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Light_Click": {
     "recognition": "TemplateMatch",
@@ -1249,7 +1221,7 @@
       "changeLineup_Light_confirm",
       "changeLineup_Light_Click"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Light_confirm": {
     "recognition": "TemplateMatch",
@@ -1266,7 +1238,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第二步，选择出战属性有1~6个队伍
   "dispatchTeam_Light": {
@@ -1277,7 +1249,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第三步，选择完成后，检测支援虚数体栏位是否为"EMPT"。
   "selectEmpty_Light": {
@@ -1292,7 +1264,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //备选方案1
   "offMecha_Light": {
@@ -1300,15 +1272,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "offChangeLineup_Light",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offMecha_Light"
+    "on_error": ["offMecha_Light"]
   },
   //备选方案2
   "offChangeLineup_Light": {
@@ -1322,7 +1292,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "offChangeLineup_Light"
+    "on_error": ["offChangeLineup_Light"]
   },
   //第四步，点击出战后进入虚数体选择界面。有满破王甲150，高破王甲150，满破有方甲150，高破方甲130
   "DefaultMecha_Light": {
@@ -1338,7 +1308,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第五步，全部确认好之后点击出战
   "dispatchCombat_Light": {
@@ -1352,7 +1322,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_Light": {
     "recognition": "TemplateMatch",
@@ -1370,7 +1340,7 @@
       "battleVictory_Light",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_1_Light": {
     "recognition": "OCR",
@@ -1383,7 +1353,7 @@
       "网络连接断开"
     ],
     "rate_limit": 1500,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleVictory_Light": {
     "recognition": "TemplateMatch",
@@ -1399,7 +1369,7 @@
       "battleConfirmation_Light",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "deathInBattle_Light": {
     "recognition": "TemplateMatch",
@@ -1410,7 +1380,7 @@
       "battleVictory_Light",
       "网络连接断开"
     ],
-    "on_error": "deathInBattle_Light"
+    "on_error": ["deathInBattle_Light"]
   },
   "battleConfirmation_Light": {
     "recognition": "TemplateMatch",
@@ -1427,12 +1397,10 @@
     "next": [
       "teamBattleKinnara",
       "battleConfirmation_Light",
-      "网络连接断开"
+      "网络连接断开",
+      "[JumpBack]clickOnTheBlankAreaKinnara"
     ],
-    "interrupt": [
-      "clickOnTheBlankAreaKinnara"
-    ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
 
   //------------出战队伍设置暗--------------
@@ -1442,15 +1410,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "changeLineup_Dark",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offDefaultMecha_Dark"
+    "on_error": ["offDefaultMecha_Dark"]
   },
   "changeLineup_Dark": {
     "recognition": "TemplateMatch",
@@ -1467,7 +1433,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Dark_Click": {
     "recognition": "TemplateMatch",
@@ -1483,7 +1449,7 @@
       "changeLineup_Dark_confirm",
       "changeLineup_Dark_Click"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Dark_confirm": {
     "recognition": "TemplateMatch",
@@ -1500,7 +1466,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第二步，选择出战属性有1~6个队伍
   "dispatchTeam_Dark": {
@@ -1511,7 +1477,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第三步，选择完成后，检测支援虚数体栏位是否为"EMPT"。
   "selectEmpty_Dark": {
@@ -1523,13 +1489,11 @@
     "next": [
       "DefaultMecha_Dark",
       "offMecha_Dark",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "slideToTheRight_Kinnara"
+      "网络连接断开",
+      "[JumpBack]slideToTheRight_Kinnara"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //备选方案1
   "offMecha_Dark": {
@@ -1537,15 +1501,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "offChangeLineup_Dark",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offMecha_Dark"
+    "on_error": ["offMecha_Dark"]
   },
   //备选方案2
   "offChangeLineup_Dark": {
@@ -1559,7 +1521,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "offChangeLineup_Dark"
+    "on_error": ["offChangeLineup_Dark"]
   },
   //第四步，点击出战后进入虚数体选择界面。有满破王甲150，高破王甲150，满破有方甲150，高破方甲130
   "DefaultMecha_Dark": {
@@ -1575,7 +1537,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第五步，全部确认好之后点击出战
   "dispatchCombat_Dark": {
@@ -1589,7 +1551,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_Dark": {
     "recognition": "TemplateMatch",
@@ -1608,7 +1570,7 @@
       "battleDefeat_Dark",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_1_Dark": {
     "recognition": "OCR",
@@ -1622,7 +1584,7 @@
       "网络连接断开"
     ],
     "rate_limit": 1500,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleVictory_Dark": {
     "recognition": "TemplateMatch",
@@ -1638,7 +1600,7 @@
       "battleConfirmation_Dark",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleDefeat_Dark": {
     "recognition": "TemplateMatch",
@@ -1655,7 +1617,7 @@
       "teamBattleKinnara",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "deathInBattle_Dark": {
     "recognition": "TemplateMatch",
@@ -1667,7 +1629,7 @@
       "battleDefeat_Dark",
       "网络连接断开"
     ],
-    "on_error": "deathInBattle_Dark"
+    "on_error": ["deathInBattle_Dark"]
   },
   "battleConfirmation_Dark": {
     "recognition": "TemplateMatch",
@@ -1684,12 +1646,10 @@
     "next": [
       "teamBattleKinnara",
       "battleConfirmation_Dark",
-      "网络连接断开"
+      "网络连接断开",
+      "[JumpBack]clickOnTheBlankAreaKinnara"
     ],
-    "interrupt": [
-      "clickOnTheBlankAreaKinnara"
-    ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
 
   //------------紧那罗本体出战队伍设置--------------
@@ -1698,15 +1658,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "changeLineup_Kinnara",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offDefaultMecha_Kinnara"
+    "on_error": ["offDefaultMecha_Kinnara"]
   },
   "changeLineup_Kinnara": {
     "recognition": "TemplateMatch",
@@ -1723,7 +1681,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Kinnara_Click": {
     "recognition": "TemplateMatch",
@@ -1739,7 +1697,7 @@
       "changeLineup_Kinnara_confirm",
       "changeLineup_Kinnara_Click"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "changeLineup_Kinnara_confirm": {
     "recognition": "TemplateMatch",
@@ -1756,7 +1714,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第二步，选择出战属性有1~6个队伍
   "dispatchTeam_Kinnara": {
@@ -1767,7 +1725,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第三步，选择完成后，检测支援虚数体栏位是否为"EMPT"。
   "selectEmpty_Kinnara": {
@@ -1787,7 +1745,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //备选方案1
   "offMecha_Kinnara": {
@@ -1795,15 +1753,13 @@
     "expected" : "选择支援虚数体",
     "roi" : [511,0,354,150],
     "pre_delay": 150,
-    "next":[
+    "next": [
       "offChangeLineup_Kinnara",
-      "网络连接断开"
-    ],
-    "interrupt": [
-      "offDefaultMecha"
+      "网络连接断开",
+      "[JumpBack]offDefaultMecha"
     ],
     "timeout": 3000,
-    "on_error": "offMecha_Kinnara"
+    "on_error": ["offMecha_Kinnara"]
   },
   //备选方案2
   "offChangeLineup_Kinnara": {
@@ -1817,7 +1773,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "offChangeLineup_Kinnara"
+    "on_error": ["offChangeLineup_Kinnara"]
   },
   //第四步，点击出战后进入虚数体选择界面。有满破王甲150，高破王甲150，满破有方甲150，高破方甲130
   "DefaultMecha_Kinnara": {
@@ -1833,7 +1789,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   //第五步，全部确认好之后点击出战
   "dispatchCombat_Kinnara": {
@@ -1852,7 +1808,7 @@
       "网络连接断开"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_Kinnara": {
     "recognition": "TemplateMatch",
@@ -1871,7 +1827,7 @@
       "battleTimeout_Kinnara",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "recognizeEnteringTheRoom_1_Kinnara": {
     "recognition": "OCR",
@@ -1885,7 +1841,7 @@
       "网络连接断开"
     ],
     "rate_limit": 1500,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "battleVictory_Kinnara": {
     "recognition": "TemplateMatch",
@@ -1901,7 +1857,7 @@
       "battleConfirmation_Kinnara",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "deathInBattle_Kinnara": {
     "recognition": "TemplateMatch",
@@ -1913,7 +1869,7 @@
       "battleTimeout_Kinnara",
       "网络连接断开"
     ],
-    "on_error": "deathInBattle_Kinnara"
+    "on_error": ["deathInBattle_Kinnara"]
   },
   "battleTimeout_Kinnara": {
     //紧那罗超时会直接回到紧那罗讨伐主界面
@@ -1928,7 +1884,7 @@
       118,
       33
     ],
-    "on_error": "deathInBattle_Kinnara"
+    "on_error": ["deathInBattle_Kinnara"]
   },
   "battleConfirmation_Kinnara": {
     "recognition": "TemplateMatch",
@@ -1946,7 +1902,7 @@
     "next": [
       "clickOnTheBlankAreaKinnara"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "offDefaultMecha": {
     "recognition": "TemplateMatch",
@@ -1977,7 +1933,7 @@
       "roomNotExist_Kinnara_Close",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "roomNotExist_Kinnara_Close": {
     "recognition": "TemplateMatch",
@@ -1993,6 +1949,6 @@
       "teamBattleKinnara",
       "网络连接断开"
     ],
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   }
 }

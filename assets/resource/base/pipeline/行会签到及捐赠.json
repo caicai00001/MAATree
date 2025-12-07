@@ -5,7 +5,7 @@
             "返回主页检测"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "确认是否在主页_捐赠": {
         "recognition": "TemplateMatch",
@@ -18,7 +18,7 @@
             "停止"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击行会": {
         "recognition": "OCR",
@@ -37,7 +37,7 @@
             "点击行会"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "等待进入行会": {
         "recognition": "TemplateMatch",
@@ -68,13 +68,11 @@
         ],
         "post_delay": 500,
         "next": [
-            "等待进入行会"
-        ],
-        "interrupt": [
-            "点击空白处关闭"
+            "等待进入行会",
+            "[JumpBack]点击空白处关闭"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "判断是否需捐赠_行会页面内": {
         "recognition": "TemplateMatch",
@@ -97,7 +95,7 @@
             "点击捐赠_捐赠页面"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击捐赠_捐赠页面": {
         "recognition": "OCR",
@@ -109,9 +107,9 @@
             90
         ],
         "action": "Click",
-        "next": "点两次加_1",
+        "next": ["点两次加_1"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点两次加_1": {
         "recognition": "OCR",
@@ -131,9 +129,9 @@
         ],
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "点两次加_2",
+        "next": ["点两次加_2"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点两次加_2": {
         "recognition": "OCR",
@@ -153,9 +151,9 @@
         ],
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "点两次加_3",
+        "next": ["点两次加_3"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点两次加_3": {
         "recognition": "OCR",
@@ -175,9 +173,9 @@
         ],
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "点击确定_捐赠",
+        "next": ["点击确定_捐赠"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击确定_捐赠": {
         "recognition": "OCR",
@@ -191,12 +189,10 @@
         "action": "Click",
         "next": [
             "点击确定_捐赠",
-            "退出"
-        ],
-        "interrupt": [
-            "点击空白处关闭"
+            "退出",
+            "[JumpBack]点击空白处关闭"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     }
 }

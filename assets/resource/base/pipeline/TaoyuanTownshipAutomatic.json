@@ -2,13 +2,11 @@
   "startAutoTaoyuanTownship": {
     "next": [
       "detectionHome",
-      "返回主页检测"
-    ],
-    "interrupt": [
-      "退出"
+      "返回主页检测",
+      "[JumpBack]退出"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "detectionHome": {
     "recognition": "TemplateMatch",
@@ -20,7 +18,7 @@
       "clickCompact"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "clickTaoyuanTownship": {
     "recognition": "TemplateMatch",
@@ -33,7 +31,7 @@
     "pre_delay": 600,
     "post_delay": 2000,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "selectTaoyuanAttribute": {
     "recognition": "OCR",
@@ -46,7 +44,7 @@
     "pre_delay": 350,
     "post_delay": 350,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "lostItem": {
     "recognition": "TemplateMatch",
@@ -54,11 +52,11 @@
     "threshold": 0.85,
     "roi" : [78,232,1184,227],
     "action": "Click",
-    "next": "lostItem_1",
+    "next": ["lostItem_1"],
     "pre_delay": 350,
     "post_delay": 350,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "lostItem_1": {
     "target": [
@@ -75,7 +73,7 @@
     "pre_delay": 350,
     "post_delay": 350,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "lostItem_2": {
     "recognition": "OCR",
@@ -87,11 +85,11 @@
       48
     ],
     "action": "Click",
-    "next": "mopping_lostItem",
+    "next": ["mopping_lostItem"],
     "pre_delay": 350,
     "post_delay": 350,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "mopping_lostItem": {
     "recognition": "OCR",
@@ -111,7 +109,7 @@
       "didnTClearTheLevel"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "moppingLostItemDetermine": {
     "recognition": "OCR",
@@ -125,9 +123,9 @@
     "action": "Click",
     "pre_delay": 350,
     "post_delay": 350,
-    "next": "moppingLostItem_waitForCompletion",
+    "next": ["moppingLostItem_waitForCompletion"],
     "timeout": 80000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "moppingLostItem_waitForCompletion": {
     "recognition": "OCR",
@@ -143,21 +141,22 @@
     "post_delay": 1000,
     "next": [
       "moppingLostItem_waitForCompletion",
-      "LostThings"],
-    "interrupt": "clickBlank",
+      "LostThings",
+      "[JumpBack]clickBlank"
+    ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "LostThings": {
     "recognition": "TemplateMatch",
     "template": "GoldAbyss/遗落之物-火.png",
     "roi" : [78,232,1184,227],
     "action": "Click",
-    "next": "LostThings_1",
+    "next": ["LostThings_1"],
     "pre_delay": 400,
     "post_delay": 400,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "LostThings_1": {
     "recognition": "OCR",
@@ -177,7 +176,7 @@
       "didnTClearTheLevel"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "moppingLostThingsDetermine": {
     "recognition": "OCR",
@@ -191,9 +190,9 @@
     "action": "Click",
     "pre_delay": 400,
     "post_delay": 400,
-    "next": "moppingLostThings_waitForCompletion",
+    "next": ["moppingLostThings_waitForCompletion"],
     "timeout": 80000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "moppingLostThings_waitForCompletion": {
     "recognition": "OCR",
@@ -209,30 +208,31 @@
     "post_delay": 1000,
     "next": [
       "moppingLostThings_waitForCompletion",
-      "theMasterOfTaoyuan"],
-    "interrupt": "clickBlank",
+      "theMasterOfTaoyuan",
+      "[JumpBack]clickBlank"
+    ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "theMasterOfTaoyuan": {
     "recognition": "TemplateMatch",
     "template": "GoldAbyss/朱雀.png",
     "roi" : [78,232,1184,227],
     "action": "Click",
-    "next": "theMasterOfTaoyuan_Difficulty",
+    "next": ["theMasterOfTaoyuan_Difficulty"],
     "pre_delay": 400,
     "post_delay": 400,
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "theMasterOfTaoyuan_Difficulty": {
     "target" : [800,559,38,60],
     "action": "Click",
     "pre_delay": 400,
     "post_delay": 400,
-    "next": "theMasterOfTaoyuan_1",
+    "next": ["theMasterOfTaoyuan_1"],
     "timeout": 3000,
-    "on_error": "stopapp",
+    "on_error": ["stopapp"],
     "enabled": true
   },
   "theMasterOfTaoyuan_1": {
@@ -253,7 +253,7 @@
       "didnTClearTheLevel"
     ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "moppingTheMasterOfTaoyuanDetermine": {
     "recognition": "OCR",
@@ -267,9 +267,9 @@
     "action": "Click",
     "pre_delay": 400,
     "post_delay": 400,
-    "next": "moppingTheMasterOfTaoyuan_waitForCompletion",
+    "next": ["moppingTheMasterOfTaoyuan_waitForCompletion"],
     "timeout": 80000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "moppingTheMasterOfTaoyuan_waitForCompletion": {
     "recognition": "OCR",
@@ -283,10 +283,12 @@
     "action": "Click",
     "pre_delay": 400,
     "post_delay": 1000,
-    "next": "停止",
-    "interrupt": "clickBlank",
+    "next": [
+      "停止",
+      "[JumpBack]clickBlank"
+    ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "insufficientMaterialsRequired_TheMasterOfTaoyuan": {
     "recognition": "OCR",
@@ -297,9 +299,9 @@
       259,
       76
     ],
-    "next": "LostThings",
+    "next": ["LostThings"],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "insufficientMaterialsRequired_LostThings": {
     "recognition": "OCR",
@@ -310,17 +312,17 @@
       259,
       76
     ],
-    "next": "lostItem",
+    "next": ["lostItem"],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "didnTClearTheLevel": {
     "recognition": "OCR",
     "expected": "需要通过",
     "roi" : [473,321,333,74],
-    "next": "返回主页检测",
+    "next": ["返回主页检测"],
     "timeout": 1000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "insufficientMaterialsRequired_LostItem": {
     "recognition": "OCR",
@@ -331,9 +333,9 @@
       259,
       76
     ],
-    "next": "supplementary_sap_Plus",
+    "next": ["supplementary_sap_Plus"],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "supplementary_sap_Plus": {
     "recognition": "TemplateMatch",
@@ -345,9 +347,9 @@
       86
     ],
     "action": "Click",
-    "next": "supplementary_EnterInterface",
+    "next": ["supplementary_EnterInterface"],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "supplementary_EnterInterface": {
     "recognition": "OCR",
@@ -360,9 +362,9 @@
     ],
     "pre_delay": 20,
     "post_delay": 20,
-    "next": "supplementary_60",
+    "next": ["supplementary_60"],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "supplementary_60": {
     "recognition": "OCR",
@@ -413,10 +415,12 @@
     ],
     "action": "Click",
     "post_delay": 400,
-    "next": "clickTaoyuanTownship",
-    "interrupt": "taoyuanSwipeRight",
+    "next": [
+      "clickTaoyuanTownship",
+      "[JumpBack]taoyuanSwipeRight"
+    ],
     "timeout": 3000,
-    "on_error": "stopapp"
+    "on_error": ["stopapp"]
   },
   "clickBlank": {
     "action": "Click",

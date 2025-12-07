@@ -1,10 +1,12 @@
 {
     "主线扫荡开始": {
-        "next": "zx识别是否在主页",
-        "interrupt": "zx返回主页_主线",
+        "next": [
+            "zx识别是否在主页",
+            "[JumpBack]zx返回主页_主线"
+        ],
         "timeout": 3000,
         "post_delay": 500,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx识别是否在主页": {
         "recognition": "TemplateMatch",
@@ -17,7 +19,7 @@
         "post_delay": 500,
         "action": "Click",
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx返回主页_主线": {
         "recognition": "TemplateMatch",
@@ -34,11 +36,11 @@
             1262,
             59
         ],
-        "next": "zx识别主线2",
+        "next": ["zx识别主线2"],
         "action": "Click",
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx识别主线2": {
         "recognition": "OCR",
@@ -49,11 +51,11 @@
             1262,
             59
         ],
-        "next": "zx识别主线3",
+        "next": ["zx识别主线3"],
         "action": "Click",
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx识别主线3": {
         "recognition": "OCR",
@@ -64,11 +66,11 @@
             1262,
             59
         ],
-        "next": "zx识别第一部",
+        "next": ["zx识别第一部"],
         "action": "Click",
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx识别第一部": {
         "recognition": "OCR",
@@ -79,21 +81,23 @@
             97,
             37
         ],
-        "next": "zx识别第一章",
-        "interrupt": "向左滑动",
+        "next": [
+            "zx识别第一章",
+            "[JumpBack]向左滑动"
+        ],
         "action": "Click",
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx识别第一章": {
         "recognition": "TemplateMatch",
         "template": "Story/第一章.png",
-        "next": "zx点击难度",
+        "next": ["zx点击难度"],
         "post_delay": 500,
         "action": "Click",
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "向左滑动": {
         "recognition": "OCR",
@@ -120,7 +124,7 @@
         "duration": 500,
         "action": "Swipe",
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx点击难度": {
         "recognition": "OCR",
@@ -132,10 +136,10 @@
             36
         ],
         "post_delay": 500,
-        "next": "检测补体0",
+        "next": ["检测补体0"],
         "action": "Click",
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测补体0": {
         "recognition": "TemplateMatch",
@@ -152,7 +156,7 @@
         ],
         "action": "Click",
         "timeout": 3000,
-        "on_error": "停止_扫荡主线"
+        "on_error": ["停止_扫荡主线"]
     },
     "zx进入补体页面": {
         "recognition": "OCR",
@@ -163,7 +167,7 @@
             "检测体力是否为两位数_是"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测体力是否为两位数_是": {
         "recognition": "OCR",
@@ -177,7 +181,7 @@
         "post_wait_freezes": 150,
         "post_delay": 200,
         "timeout": 3000,
-        "on_error": "停止_扫荡主线"
+        "on_error": ["停止_扫荡主线"]
     },
     "检测体力是否为两位数_否": {
         "recognition": "OCR",
@@ -193,15 +197,15 @@
         "pre_delay": 10,
         "post_delay": 10,
         "timeout": 3000,
-        "on_error": "停止_扫荡主线"
+        "on_error": ["停止_扫荡主线"]
     },
     "大红瓶": {
         "recognition": "TemplateMatch",
         "template": "Common/大红瓶.png",
         "roi" : [513,235,172,92],
-        "next": "补体2",
+        "next": ["补体2"],
         "timeout": 3000,
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "小红瓶": {
         "recognition": "TemplateMatch",
@@ -209,9 +213,9 @@
         "roi" : [600,235,151,92],
         "target" : [656,263,31,62],
         "action": "Click",
-        "next": "小红瓶补体1",
+        "next": ["小红瓶补体1"],
         "timeout": 3000,
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "补体2": {
         "recognition": "OCR",
@@ -223,8 +227,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "补体3",
-        "on_error": "检测补体1(使用)"
+        "next": ["补体3"],
+        "on_error": ["检测补体1(使用)"]
     },
     "补体3": {
         "recognition": "OCR",
@@ -236,8 +240,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "补体4",
-        "on_error": "检测补体1(使用)"
+        "next": ["补体4"],
+        "on_error": ["检测补体1(使用)"]
     },
     "补体4": {
         "recognition": "OCR",
@@ -249,8 +253,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "补体5",
-        "on_error": "检测补体1(使用)"
+        "next": ["补体5"],
+        "on_error": ["检测补体1(使用)"]
     },
     "补体5": {
         "recognition": "OCR",
@@ -262,8 +266,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 300,
-        "next": "检测补体1(使用)",
-        "on_error": "检测补体(未达)"
+        "next": ["检测补体1(使用)"],
+        "on_error": ["检测补体(未达)"]
     },
     "小红瓶补体1": {
         "recognition": "OCR",
@@ -275,8 +279,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "小红瓶补体2",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体2"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体2": {
         "recognition": "OCR",
@@ -288,8 +292,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "小红瓶补体3",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体3"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体3": {
         "recognition": "OCR",
@@ -301,8 +305,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "小红瓶补体4",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体4"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体4": {
         "recognition": "OCR",
@@ -314,8 +318,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "小红瓶补体5",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体5"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体5": {
         "recognition": "OCR",
@@ -327,8 +331,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "小红瓶补体6",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体6"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体6": {
         "recognition": "OCR",
@@ -340,8 +344,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "小红瓶补体7",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体7"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体7": {
         "recognition": "OCR",
@@ -353,8 +357,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 100,
-        "next": "小红瓶补体8",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体8"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体8": {
         "recognition": "OCR",
@@ -366,8 +370,8 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 300,
-        "next": "小红瓶补体9",
-        "on_error": "检测补体1(使用)"
+        "next": ["小红瓶补体9"],
+        "on_error": ["检测补体1(使用)"]
     },
     "小红瓶补体9": {
         "recognition": "OCR",
@@ -379,11 +383,11 @@
         "inverse": true,
         "pre_delay": 100,
         "post_delay": 300,
-        "next": "检测补体1(使用)",
-        "on_error": "检测补体(未达)"
+        "next": ["检测补体1(使用)"],
+        "on_error": ["检测补体(未达)"]
     },
     "检测补体(未达)": {
-        "next": "补体力后的点击",
+        "next": ["补体力后的点击"],
         "action": "Click",
         "target": [
             781,
@@ -393,13 +397,13 @@
         ],
         "post_delay": 200,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测补体1(使用)": {
         "recognition": "OCR",
         "expected": "^5\\d{2}$",
         "roi" : [606,395,81,58],
-        "next": "补体力后的点击",
+        "next": ["补体力后的点击"],
         "action": "Click",
         "target": [
             781,
@@ -409,13 +413,13 @@
         ],
         "post_delay": 200,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测补体2(超出)": {
         "recognition": "OCR",
         "expected": "^([6-9]\\d{2})$",
         "roi" : [606,395,81,58],
-        "next": "zx一键扫荡",
+        "next": ["zx一键扫荡"],
         "action": "Click",
         "target": [
             1187,
@@ -425,7 +429,7 @@
         ],
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "补体力后的点击": {
         "recognition": "TemplateMatch",
@@ -438,9 +442,9 @@
         ],
         "post_delay": 700,
         "action": "Click",
-        "next": "zx一键扫荡",
+        "next": ["zx一键扫荡"],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx一键扫荡": {
         "recognition": "OCR",
@@ -458,7 +462,7 @@
         "action": "Click",
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测是否为全部完成": {
         "recognition": "ColorMatch",
@@ -478,9 +482,9 @@
             29,
             29
         ],
-        "next": "zx叉",
+        "next": ["zx叉"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx扫荡": {
         "recognition": "OCR",
@@ -491,10 +495,10 @@
             102,
             72
         ],
-        "next": "zx扫荡完成",
+        "next": ["zx扫荡完成"],
         "action": "Click",
         "timeout": 25000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx叉": {
         "recognition": "TemplateMatch",
@@ -505,7 +509,7 @@
         ],
         "action": "Click",
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx扫荡完成": {
         "recognition": "OCR",
@@ -524,7 +528,7 @@
         "pre_delay": 800,
         "action": "Click",
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "zx识别结束": {
         "recognition": "OCR",
@@ -535,17 +539,17 @@
             168,
             62
         ],
-        "next": "停止",
+        "next": ["停止"],
         "timeout": 3000
     },
     "zx下一章": {
         "recognition": "TemplateMatch",
         "template": "Story/主线下一章.png",
-        "next": "检测补体0",
+        "next": ["检测补体0"],
         "action": "Click",
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "停止_扫荡主线": {
         "action": "DoNothing",

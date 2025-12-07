@@ -1,12 +1,10 @@
 {
     "探索活动领取-3.10版本": {
         "next": [
-            "探索活动领取"
+            "探索活动领取",
+            "[JumpBack]ReturnMain"
         ],
-        "interrupt": [
-            "ReturnMain"
-        ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探索活动领取": {
         "recognition": "TemplateMatch",
@@ -24,7 +22,7 @@
             "停止"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击探索活动": {
         "recognition": "TemplateMatch",
@@ -37,11 +35,11 @@
         ],
         "threshold": 0.9,
         "action": "Click",
-        "next": "点击探求者之书",
+        "next": ["点击探求者之书"],
         "pre_delay": 350,
         "post_delay": 350,
         "timeout": 5000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击探求者之书": {
         "recognition": "OCR",
@@ -53,12 +51,12 @@
             101
         ],
         "action": "Click",
-        "next": "探求者之书_任务_点击",
+        "next": ["探求者之书_任务_点击"],
         "pre_delay": 150,
         "post_delay": 150,
         "post_wait_freezes": 300,
         "timeout": 8000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探求者之书_任务_点击": {
         "recognition": "OCR",
@@ -76,7 +74,7 @@
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 800,
-        "on_error": "探求者之书_任务_本周_切换"
+        "on_error": ["探求者之书_任务_本周_切换"]
     },
     "一键领取_探索者之书_日常任务奖励": {
         "recognition": "OCR",
@@ -90,15 +88,13 @@
         "action": "Click",
         "next": [
             "探索书_暂无可领取奖励",
-            "一键领取_探索者之书_日常任务奖励"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "一键领取_探索者之书_日常任务奖励",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 800,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探求者之书_任务_本周_切换": {
         "recognition": "OCR",
@@ -110,11 +106,11 @@
             52
         ],
         "action": "Click",
-        "next": "一键领取_探索者之书_本周任务奖励",
+        "next": ["一键领取_探索者之书_本周任务奖励"],
         "pre_delay": 100,
         "post_delay": 100,
         "timeout": 800,
-        "on_error": "探求者之书_奖励"
+        "on_error": ["探求者之书_奖励"]
     },
     "一键领取_探索者之书_本周任务奖励": {
         "recognition": "OCR",
@@ -134,15 +130,13 @@
         ],
         "next": [
             "一键领取_探索者之书_本周任务奖励",
-            "探求者之书_奖励"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "探求者之书_奖励",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探求者之书_奖励": {
         "recognition": "OCR",
@@ -154,11 +148,11 @@
             53
         ],
         "action": "Click",
-        "next": "探求者之书_奖励_一键领取",
+        "next": ["探求者之书_奖励_一键领取"],
         "pre_delay": 100,
         "post_delay": 100,
         "timeout": 800,
-        "on_error": "探求者之书_奖励_器灵讨伐书"
+        "on_error": ["探求者之书_奖励_器灵讨伐书"]
     },
     "探求者之书_奖励_一键领取": {
         "recognition": "OCR",
@@ -173,15 +167,13 @@
         "post_wait_freezes": 300,
         "next": [
             "探求者之书_奖励_一键领取",
-            "探求者之书_奖励_器灵讨伐书"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "探求者之书_奖励_器灵讨伐书",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 2000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探求者之书_奖励_器灵讨伐书": {
         "recognition": "OCR",
@@ -192,12 +184,12 @@
             224,
             106
         ],
-        "next": "器灵讨伐书_任务_点击",
+        "next": ["器灵讨伐书_任务_点击"],
         "action": "Click",
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 800,
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "器灵讨伐书_任务_点击": {
         "recognition": "OCR",
@@ -215,7 +207,7 @@
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 800,
-        "on_error": "器灵讨伐书_任务_本周_切换"
+        "on_error": ["器灵讨伐书_任务_本周_切换"]
     },
     "一键领取_器灵讨伐书_日常任务奖励": {
         "recognition": "OCR",
@@ -229,15 +221,13 @@
         "action": "Click",
         "next": [
             "器灵书_暂无可领取奖励",
-            "一键领取_器灵讨伐书_日常任务奖励"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "一键领取_器灵讨伐书_日常任务奖励",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 800,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "器灵讨伐书_任务_本周_切换": {
         "recognition": "OCR",
@@ -249,11 +239,11 @@
             52
         ],
         "action": "Click",
-        "next": "一键领取_器灵讨伐书_本周任务奖励",
+        "next": ["一键领取_器灵讨伐书_本周任务奖励"],
         "pre_delay": 100,
         "post_delay": 100,
         "timeout": 800,
-        "on_error": "器灵讨伐书_奖励"
+        "on_error": ["器灵讨伐书_奖励"]
     },
     "一键领取_器灵讨伐书_本周任务奖励": {
         "recognition": "OCR",
@@ -273,15 +263,13 @@
         ],
         "next": [
             "一键领取_器灵讨伐书_本周任务奖励",
-            "器灵讨伐书_奖励"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "器灵讨伐书_奖励",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "器灵讨伐书_奖励": {
         "recognition": "OCR",
@@ -293,11 +281,11 @@
             53
         ],
         "action": "Click",
-        "next": "器灵书_奖励界面",
+        "next": ["器灵书_奖励界面"],
         "pre_delay": 100,
         "post_delay": 100,
         "timeout": 800,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "器灵讨伐书_奖励_一键领取": {
         "recognition": "OCR",
@@ -316,7 +304,7 @@
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 2000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "ts点击空白处2": {
         "recognition": "OCR",
@@ -328,7 +316,7 @@
             164,
             71
         ],
-        "next": "停止"
+        "next": ["停止"]
     },
     "ts点击空白处": {
         "recognition": "OCR",
@@ -352,7 +340,7 @@
         ],
         "action": "Click",
         "timeout": 2000,
-        "next": "探求者之书_任务_本周_切换"
+        "next": ["探求者之书_任务_本周_切换"]
     },
     "器灵书_暂无可领取奖励": {
         "recognition": "OCR",
@@ -365,7 +353,7 @@
         ],
         "action": "Click",
         "timeout": 2000,
-        "next": "器灵讨伐书_任务_本周_切换"
+        "next": ["器灵讨伐书_任务_本周_切换"]
     },
     "器灵书_奖励界面": {
         "recognition": "OCR",
@@ -382,7 +370,7 @@
             "器灵讨伐书_奖励_一键领取",
             "点击探求者之书_2"
         ],
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "点击探求者之书_2": {
         "recognition": "OCR",
@@ -394,7 +382,7 @@
             101
         ],
         "action": "Click",
-        "next": "探求者之书_任务_点击_2",
+        "next": ["探求者之书_任务_点击_2"],
         "pre_delay": 150,
         "post_delay": 150,
         "post_wait_freezes": 300,
@@ -416,7 +404,7 @@
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 800,
-        "on_error": "探求者之书_任务_本周_切换_2"
+        "on_error": ["探求者之书_任务_本周_切换_2"]
     },
     "一键领取_探索者之书_日常任务奖励_2": {
         "recognition": "OCR",
@@ -430,15 +418,13 @@
         "action": "Click",
         "next": [
             "探索书_暂无可领取奖励_2",
-            "一键领取_探索者之书_日常任务奖励_2"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "一键领取_探索者之书_日常任务奖励_2",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 800,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探求者之书_任务_本周_切换_2": {
         "recognition": "OCR",
@@ -450,11 +436,11 @@
             52
         ],
         "action": "Click",
-        "next": "一键领取_探索者之书_本周任务奖励_2",
+        "next": ["一键领取_探索者之书_本周任务奖励_2"],
         "pre_delay": 100,
         "post_delay": 100,
         "timeout": 800,
-        "on_error": "探求者之书_奖励_2"
+        "on_error": ["探求者之书_奖励_2"]
     },
     "一键领取_探索者之书_本周任务奖励_2": {
         "recognition": "OCR",
@@ -474,15 +460,13 @@
         ],
         "next": [
             "一键领取_探索者之书_本周任务奖励_2",
-            "探求者之书_奖励_2"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "探求者之书_奖励_2",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探求者之书_奖励_2": {
         "recognition": "OCR",
@@ -494,11 +478,11 @@
             53
         ],
         "action": "Click",
-        "next": "探求者之书_奖励_一键领取_2",
+        "next": ["探求者之书_奖励_一键领取_2"],
         "pre_delay": 100,
         "post_delay": 100,
         "timeout": 800,
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "探求者之书_奖励_一键领取_2": {
         "recognition": "OCR",
@@ -513,15 +497,13 @@
         "post_wait_freezes": 300,
         "next": [
             "探求者之书_奖励_一键领取_2",
-            "停止"
-        ],
-        "interrupt": [
-            "ts点击空白处"
+            "停止",
+            "[JumpBack]ts点击空白处"
         ],
         "pre_delay": 150,
         "post_delay": 150,
         "timeout": 2000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "探索书_暂无可领取奖励_2": {
         "recognition": "OCR",
@@ -534,14 +516,12 @@
         ],
         "action": "Click",
         "timeout": 2000,
-        "next": "探求者之书_任务_本周_切换_2"
+        "next": ["探求者之书_任务_本周_切换_2"]
     },
     "DailyTask": {
         "next": [
-            "ClickTask"
-        ],
-        "interrupt": [
-            "ReturnMain"
+            "ClickTask",
+            "[JumpBack]ReturnMain"
         ]
     },
     "ClickTask": {
@@ -574,10 +554,8 @@
         "action": "Click",
         "next": [
             "TaskNoGain",
-            "TaskAllGain"
-        ],
-        "interrupt": [
-            "点击空白处关闭"
+            "TaskAllGain",
+            "[JumpBack]点击空白处关闭"
         ]
     },
     "TaskNoGain": {

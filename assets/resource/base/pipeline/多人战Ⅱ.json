@@ -1,12 +1,12 @@
 {
     "开始多人战": {
-        "next": "主页出击",
-        "interrupt": [
-            "返回主页0",
-            "退出"
+        "next": [
+            "主页出击",
+            "[JumpBack]返回主页0",
+            "[JumpBack]退出"
         ],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "主页出击": {
         "recognition": "TemplateMatch",
@@ -16,11 +16,11 @@
         "roi" : [847,299,415,346],
         "timeout": 3000,
         "post_delay": 1400,
-        "on_error": "stopapp",
-        "next": "排除干扰_导览"
+        "on_error": ["stopapp"],
+        "next": ["排除干扰_导览"]
     },
     "主页出击1": {
-        "next": "主页出击"
+        "next": ["主页出击"]
     },
     "返回主页": {
         "recognition": "TemplateMatch",
@@ -34,8 +34,10 @@
         "action": "Click",
         "timeout": 2000,
         "post_delay": 1400,
-        "next": "主页出击1",
-        "interrupt": "退出",
+        "next": [
+            "主页出击1",
+            "[JumpBack]退出"
+        ],
         "on_error": [
             "stopapp"
         ]
@@ -65,8 +67,8 @@
         ],
         "post_delay": 800,
         "timeout": 4000,
-        "on_error": "stopapp",
-        "next": "多人2"
+        "on_error": ["stopapp"],
+        "next": ["多人2"]
     },
     "多人1": {
         "recognition": "TemplateMatch",
@@ -79,8 +81,8 @@
             68
         ],
         "timeout": 4000,
-        "on_error": "stopapp",
-        "next": "二级菜单"
+        "on_error": ["stopapp"],
+        "next": ["二级菜单"]
     },
     "多人2": {
         "recognition": "TemplateMatch",
@@ -93,8 +95,8 @@
             50
         ],
         "timeout": 4000,
-        "on_error": "stopapp",
-        "next": "二级菜单"
+        "on_error": ["stopapp"],
+        "next": ["二级菜单"]
     },
     "二级菜单": {
         "recognition": "TemplateMatch",
@@ -108,8 +110,8 @@
             121
         ],
         "timeout": 4000,
-        "on_error": "stopapp",
-        "next": "三级菜单"
+        "on_error": ["stopapp"],
+        "next": ["三级菜单"]
     },
     "三级菜单": {
         "recognition": "TemplateMatch",
@@ -122,8 +124,8 @@
             599
         ],
         "timeout": 4000,
-        "on_error": "stopapp",
-        "next": "四级菜单"
+        "on_error": ["stopapp"],
+        "next": ["四级菜单"]
     },
     "四级菜单": {
         "recognition": "OCR",
@@ -136,24 +138,24 @@
         ],
         "action": "Click",
         "timeout": 4000,
-        "on_error": "stopapp",
-        "next": "创建房间"
+        "on_error": ["stopapp"],
+        "next": ["创建房间"]
     },
     "创建房间": {
         "recognition": "OCR",
         "expected": "创建房间",
         "action": "Click",
         "timeout": 4000,
-        "next": "确定",
-        "on_error": "stopapp"
+        "next": ["确定"],
+        "on_error": ["stopapp"]
     },
     "关房门": {
         "recognition": "TemplateMatch",
         "template": "Multi/公开.png",
         "action": "Click",
         "timeout": 4000,
-        "next": "确定",
-        "on_error": "stopapp"
+        "next": ["确定"],
+        "on_error": ["stopapp"]
     },
     "确定": {
         "recognition": "OCR",
@@ -162,8 +164,8 @@
         "timeout": 4000,
         "pre_delay": 500,
         "post_delay": 1400,
-        "next": "出击",
-        "on_error": "stopapp"
+        "next": ["出击"],
+        "on_error": ["stopapp"]
     },
     "出击": {
         "recognition": "OCR",
@@ -180,13 +182,11 @@
         "post_delay": 20,
         "next": [
             "等待助战界面",
-            "识别进入房间"
+            "识别进入房间",
+            "[JumpBack]大蓝瓶",
+            "[JumpBack]小蓝瓶"
         ],
-        "interrupt": [
-            "大蓝瓶",
-            "小蓝瓶"
-        ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别进入房间": {
         "recognition": "TemplateMatch",
@@ -202,7 +202,7 @@
             "识别进入房间1"
         ],
         "rate_limit": 1000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别进入房间1": {
         "recognition": "OCR",
@@ -219,7 +219,7 @@
             "阵亡"
         ],
         "rate_limit": 2000,
-        "on_error": "战斗超时综合识别"
+        "on_error": ["战斗超时综合识别"]
     },
     "离开战斗界面": {
         "recognition": "OCR",
@@ -237,7 +237,7 @@
             "战斗确认",
             "阵亡"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "战斗超时综合识别": {
         "timeout": 4000,
@@ -245,7 +245,7 @@
             "阵亡",
             "超时跳车0"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "阵亡": {
         "recognition": "TemplateMatch",
@@ -255,7 +255,7 @@
         "next": [
             "战斗确认"
         ],
-        "on_error": "战斗超时综合识别"
+        "on_error": ["战斗超时综合识别"]
     },
     "阵亡0": {
         "recognition": "TemplateMatch",
@@ -278,10 +278,10 @@
         "post_delay": 1000,
         "next": [
             "创建房间",
-            "出击"
+            "出击",
+            "[JumpBack]战斗确认"
         ],
-        "interrupt": "战斗确认",
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "超时跳车0": {
         "recognition": "TemplateMatch",
@@ -297,7 +297,7 @@
         "next": [
             "超时跳车1"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "超时跳车1": {
         "recognition": "TemplateMatch",
@@ -314,7 +314,7 @@
             "超时跳车2",
             "超时跳车0"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "超时跳车2": {
         "recognition": "TemplateMatch",
@@ -331,7 +331,7 @@
             "超时跳车3",
             "超时跳车0"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "超时跳车3": {
         "recognition": "OCR",
@@ -349,7 +349,7 @@
             "超时跳车4",
             "超时跳车0"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "超时跳车4": {
         "recognition": "OCR",
@@ -366,7 +366,7 @@
         "next": [
             "加入房间"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "等待助战界面": {
         "recognition": "OCR",
@@ -379,9 +379,9 @@
         ],
         "pre_delay": 100,
         "post_delay": 20,
-        "next": "属性选择",
+        "next": ["属性选择"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "属性选择": {
         "recognition": "TemplateMatch",
@@ -400,7 +400,7 @@
             "编队选择",
             "助战选择"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "编队选择": {
         "recognition": "OCR",
@@ -421,7 +421,7 @@
         "post_delay": 10,
         "pre_delay": 100,
         "timeout": 4000,
-        "next": "编队选择后的识别(差分任务用)"
+        "next": ["编队选择后的识别(差分任务用)"]
     },
     "编队选择后的识别(差分任务用)": {
         "next": [
@@ -429,7 +429,7 @@
             "准备"
         ],
         "timeout": 3000,
-        "on_error": "stopapp",
+        "on_error": ["stopapp"],
         "post_delay": 10,
         "pre_delay": 10
     },
@@ -449,7 +449,7 @@
         "next": [
             "准备"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "准备": {
         "recognition": "OCR",
@@ -468,7 +468,7 @@
             "出击",
             "识别进入房间"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "助战选择": {
         "recognition": "OCR",
@@ -485,7 +485,7 @@
         "next": [
             "等待阵容界面"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "等待阵容界面": {
         "recognition": "OCR",
@@ -501,7 +501,7 @@
         "next": [
             "属性选择"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "大蓝瓶": {
         "recognition": "TemplateMatch",
@@ -521,8 +521,8 @@
         ],
         "duration": 3000,
         "timeout": 5000,
-        "next": "使用",
-        "on_error": "stopapp"
+        "next": ["使用"],
+        "on_error": ["stopapp"]
     },
     "小蓝瓶": {
         "recognition": "TemplateMatch",
@@ -542,16 +542,16 @@
         ],
         "duration": 3000,
         "timeout": 5000,
-        "next": "使用",
-        "on_error": "stopapp"
+        "next": ["使用"],
+        "on_error": ["stopapp"]
     },
     "使用": {
         "recognition": "OCR",
         "expected": "使用",
         "action": "Click",
         "timeout": 4000,
-        "next": "点击",
-        "on_error": "stopapp"
+        "next": ["点击"],
+        "on_error": ["stopapp"]
     },
     "点击": {
         "recognition": "TemplateMatch",
@@ -565,6 +565,6 @@
         "pre_delay": 700,
         "action": "Click",
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     }
 }

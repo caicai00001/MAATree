@@ -1,11 +1,11 @@
 {
     "等待被邀请": {
-        "next": "yq检测是否在主页",
-        "interrupt": [
-            "返回主页0"
+        "next": [
+            "yq检测是否在主页",
+            "[JumpBack]返回主页0"
         ],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "yq检测是否在主页": {
         "recognition": "TemplateMatch",
@@ -13,7 +13,7 @@
         "roi" : [847,299,415,346],
         "timeout": 300000,
         "rate_limit": 1500,
-        "on_error": "停止",
+        "on_error": ["停止"],
         "next": [
             "yq等待邀请请求",
             "检测是否在主页0"
@@ -24,7 +24,7 @@
         "template": "Common/主页出击.png",
         "roi" : [847,299,415,346],
         "inverse": true,
-        "next": "stopapp"
+        "next": ["stopapp"]
     },
     "yq等待邀请请求": {
         "recognition": "TemplateMatch",
@@ -38,8 +38,8 @@
         ],
         "rate_limit": 1500,
         "timeout": 4000,
-        "on_error": "stopapp",
-        "next": "byq等人到齐0"
+        "on_error": ["stopapp"],
+        "next": ["byq等人到齐0"]
     },
     "byq等人到齐0": {
         "recognition": "OCR",
@@ -56,7 +56,7 @@
             "byq等人到齐1",
             "yq检测是否在主页"
         ],
-        "on_error": "停止"
+        "on_error": ["停止"]
     },
     "byq等人到齐0.5": {
         "recognition": "TemplateMatch",
@@ -96,7 +96,7 @@
             "yq检测是否在主页"
         ],
         "timeout": 15000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "房主丢失": {
         "recognition": "OCR",
@@ -108,9 +108,9 @@
             57
         ],
         "post_delay": 500,
-        "next": "byq退出房间",
+        "next": ["byq退出房间"],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "byq退出房间": {
         "recognition": "TemplateMatch",
@@ -121,7 +121,7 @@
             "byq退出房间1"
         ],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "byq退出房间1": {
         "recognition": "OCR",
@@ -134,9 +134,9 @@
         ],
         "action": "Click",
         "post_delay": 700,
-        "next": "等待被邀请",
+        "next": ["等待被邀请"],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "结束检测": {
         "recognition": "TemplateMatch",
@@ -147,7 +147,7 @@
             169,
             54
         ],
-        "next": "等待被邀请",
+        "next": ["等待被邀请"],
         "timeout": 2000,
         "post_delay": 500
     }

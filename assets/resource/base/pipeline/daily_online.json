@@ -1,10 +1,8 @@
 {
     "DailyOnline": {
         "next": [
-            "ClickDailyOnline"
-        ],
-        "interrupt": [
-            "ReturnMain"
+            "ClickDailyOnline",
+            "[JumpBack]ReturnMain"
         ]
     },
     "ClickDailyOnline": {
@@ -49,11 +47,9 @@
         },
         "next": [
             "DailyOnlineGain",
-            "MainFlag"
-        ],
-        "interrupt": [
-            "QuitOnline",
-            "点击空白处关闭"
+            "MainFlag",
+            "[JumpBack]QuitOnline",
+            "[JumpBack]点击空白处关闭"
         ]
     },
     "DailyOnlineGain": {
@@ -78,11 +74,9 @@
         },
         "next": [
             "DailyOnlineGain",
-            "MainFlag"
-        ],
-        "interrupt": [
-            "QuitOnline",
-            "点击空白处关闭"
+            "MainFlag",
+            "[JumpBack]QuitOnline",
+            "[JumpBack]点击空白处关闭"
         ]
     },
     "QuitOnline": {

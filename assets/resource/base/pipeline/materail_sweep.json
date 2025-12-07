@@ -2,10 +2,8 @@
     "MaterailSweep": {
         "next": [
             "MaterailMain",
-            "EnterDungeonMain"
-        ],
-        "interrupt": [
-            "ReturnMain"
+            "EnterDungeonMain",
+            "[JumpBack]ReturnMain"
         ]
     },
     "ClickMaterail": {
@@ -25,10 +23,8 @@
             "type": "Click"
         },
         "next": [
-            "SelectMaterailFirst"
-        ],
-        "interrupt": [
-            "SelectMaterailSwipeLeft"
+            "SelectMaterailFirst",
+            "[JumpBack]SelectMaterailSwipeLeft"
         ]
     },
     "SelectMaterailFirst": {

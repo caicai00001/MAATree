@@ -2,13 +2,11 @@
     "开始领取邮件": {
         "next": [
             "确认是否在主页_邮件",
-            "返回主页检测"
-        ],
-        "interrupt": [
-            "退出"
+            "返回主页检测",
+            "[JumpBack]退出"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "确认是否在主页_邮件": {
         "recognition": "TemplateMatch",
@@ -21,7 +19,7 @@
             "停止"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "判断是否需领取": {
         "recognition": "ColorMatch",
@@ -31,9 +29,9 @@
         "lower" : [117,102,76],
         "post_delay": 10,
         "pre_delay": 10,
-        "next": "点击邮件",
+        "next": ["点击邮件"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击邮件": {
         "recognition": "TemplateMatch",
@@ -46,7 +44,7 @@
             "一键领取_邮件"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "一键领取_邮件": {
         "recognition": "TemplateMatch",
@@ -63,7 +61,7 @@
             "暂无可收取的附件"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "暂无可收取的附件": {
         "recognition": "OCR",
@@ -74,7 +72,7 @@
             258,
             59
         ],
-        "next": "停止"
+        "next": ["停止"]
     },
     "点击空白_邮件": {
         "recognition": "OCR",

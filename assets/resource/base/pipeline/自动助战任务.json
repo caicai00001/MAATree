@@ -5,7 +5,7 @@
             "返回主页检测"
         ],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检测助战任务是否完成1": {
         "recognition": "TemplateMatch",
@@ -15,15 +15,13 @@
         "next": [
             "检查是否需领取",
             "检测助战任务是否完成2",
-            "任务已完成"
-        ],
-        "interrupt": [
-            "向下滑动"
+            "任务已完成",
+            "[JumpBack]向下滑动"
         ],
         "pre_delay": 800,
         "post_delay": 1200,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "检查是否需领取": {
         "recognition": "OCR",
@@ -39,7 +37,7 @@
         "next": [
             "一键领取"
         ],
-        "on_error": "stopapp",
+        "on_error": ["stopapp"],
         "timeout": 8000
     },
     "一键领取": {
@@ -55,13 +53,11 @@
         "next": [
             "检查是否需领取",
             "检测助战任务是否完成2",
-            "任务已完成"
+            "任务已完成",
+            "[JumpBack]点击空白处关闭",
+            "[JumpBack]向下滑动"
         ],
-        "interrupt": [
-            "点击空白处关闭",
-            "向下滑动"
-        ],
-        "on_error": "stopapp",
+        "on_error": ["stopapp"],
         "action": "Click",
         "timeout": 8000
     },
@@ -74,9 +70,9 @@
             102,
             660
         ],
-        "next": "停止",
+        "next": ["停止"],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "向下滑动": {
         "recognition": "OCR",
@@ -116,9 +112,9 @@
         "recognition": "TemplateMatch",
         "template": "StartUp/退出.png",
         "action": "Click",
-        "next": "加入战斗",
+        "next": ["加入战斗"],
         "timeout": 4000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击启用建房": {
         "recognition": "TemplateMatch",
@@ -135,6 +131,6 @@
             "点击连战设置"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     }
 }

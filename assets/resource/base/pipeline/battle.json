@@ -17,10 +17,8 @@
             }
         },
         "next": [
-            "BattleConfirm"
-        ],
-        "interrupt": [
-            "AssistMain"
+            "BattleConfirm",
+            "[JumpBack]AssistMain"
         ]
     },
     "AssistMain": {
@@ -62,10 +60,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    1164,
-                    588,
-                    75,
-                    42
+                    1017,
+                    542,
+                    238,
+                    160
                 ],
                 "expected": [
                     "出击"
@@ -74,10 +72,12 @@
         },
         "action": "Click",
         "next": [
-            "EnterRoom"
+            "EnterBattle",
+            "BattleConfirm",
+            "[JumpBack]AssistMain"
         ]
     },
-    "EnterRoom": {
+    "EnterBattle": {
         "recognition": {
             "type": "OCR",
             "param": {
@@ -94,10 +94,8 @@
             }
         },
         "next": [
-            "BattleEnd"
-        ],
-        "interrupt": [
-            "Battling"
+            "BattleEnd",
+            "[JumpBack]Battling"
         ]
     },
     "Battling": {
@@ -123,19 +121,109 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    1081,
-                    616,
-                    192,
-                    99
+                    910,
+                    592,
+                    363,
+                    123
                 ],
                 "expected": [
+                    "退出房间",
                     "返回"
                 ]
             }
         },
+        "action": "Click",
         "next": [
-            "ReturnMain",
             "BattleEnd"
+        ],
+        "timeout": 5000,
+        "on_error": [
+            "停止"
+        ]
+    },
+    "StartRoomBattle": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    557,
+                    0,
+                    710,
+                    702
+                ],
+                "expected": "创建"
+            }
+        },
+        "action": "Click",
+        "post_delay": 1500,
+        "next": [
+            "RoomCreateConfirm",
+            "StartRoomBattle"
+        ]
+    },
+    "RoomCreateConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    250,
+                    352,
+                    722,
+                    306
+                ],
+                "expected": "确定"
+            }
+        },
+        "action": "Click",
+        "post_delay": 1000,
+        "next": [
+            "RoomAddBP",
+            "RoomCreateConfirm"
+        ]
+    },
+    "RoomAddBP": {
+        "recognition": "TemplateMatch",
+        "template": "Common/加bp按钮__1223_33_31_29__1173_0_107_112.png",
+        "roi": [
+            1221,
+            15,
+            49,
+            53
+        ],
+        "action": "Click",
+        "next": [
+            "RoomAddBPOK",
+            "RoomAddBP"
+        ]
+    },
+    "RoomAddBPOK": {
+        "recognition": "OCR",
+        "expected": "使用",
+        "roi": [
+            775,
+            407,
+            455,
+            30
+        ],
+        "action": "Click",
+        "next": [
+            "RoomBattleStart"
+        ]
+    },
+    "RoomBattleStart": {
+        "recognition": "OCR",
+        "expected": "出击",
+        "roi": [
+            1129,
+            649,
+            104,
+            40
+        ],
+        "action": "Click",
+        "next": [
+            "BattleConfirm",
+            "RoomBattleStart",
+            "[JumpBack]SelectAssist"
         ]
     }
 }

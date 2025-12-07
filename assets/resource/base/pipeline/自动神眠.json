@@ -21,14 +21,12 @@
     "开始自动神眠": {
         "next": [
             "确认是否在主页_自动神眠",
-            "返回主页检测"
-        ],
-        "interrupt": [
-            "扫荡_神眠_等待完成",
-            "退出"
+            "返回主页检测",
+            "[JumpBack]扫荡_神眠_等待完成",
+            "[JumpBack]退出"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "确认是否在主页_自动神眠": {
         "recognition": "TemplateMatch",
@@ -40,7 +38,7 @@
             "点击挑战"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击挑战": {
         "recognition": "OCR",
@@ -53,10 +51,12 @@
         ],
         "action": "Click",
         "post_delay": 300,
-        "next": "点击神眠之地",
-        "interrupt": "sm向右滑动",
+        "next": [
+            "点击神眠之地",
+            "[JumpBack]sm向右滑动"
+        ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击神眠之地": {
         "recognition": "TemplateMatch",
@@ -75,7 +75,7 @@
             "点击神眠之地"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择要打的属性_神眠": {
         "recognition": "OCR",
@@ -100,7 +100,7 @@
             "选择要打的属性_神眠"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "左滑_神眠之地": {
         "recognition": "OCR",
@@ -132,7 +132,7 @@
             "罪人_天使"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "懊悔的新生": {
         "recognition": "TemplateMatch",
@@ -141,9 +141,9 @@
         "action": "Click",
         "enabled": false,
         "post_delay": 500,
-        "next": "选择难度90级_新生",
+        "next": ["选择难度90级_新生"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度90级_新生": {
         "recognition": "OCR",
@@ -168,7 +168,7 @@
             "选择难度90级_新生"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度90级_新生_确认": {
         "recognition": "TemplateMatch",
@@ -181,9 +181,9 @@
             43
         ],
         "post_delay": 300,
-        "next": "扫荡_神眠",
+        "next": ["扫荡_神眠"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度90级_新生_确认_2": {
         "recognition": "ColorMatch",
@@ -204,9 +204,9 @@
             18
         ],
         "post_delay": 300,
-        "next": "扫荡_神眠",
+        "next": ["扫荡_神眠"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "扫荡_神眠": {
         "recognition": "OCR",
@@ -224,7 +224,7 @@
             "所需材料不足"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "所需材料不足": {
         "recognition": "OCR",
@@ -235,9 +235,9 @@
             259,
             76
         ],
-        "next": "补充sap_点加号",
+        "next": ["补充sap_点加号"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "补充sap_点加号": {
         "recognition": "TemplateMatch",
@@ -249,9 +249,9 @@
             86
         ],
         "action": "Click",
-        "next": "补充sap_进入补充界面",
+        "next": ["补充sap_进入补充界面"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "补充sap_进入补充界面": {
         "recognition": "OCR",
@@ -264,9 +264,9 @@
         ],
         "pre_delay": 20,
         "post_delay": 20,
-        "next": "补充sap_补充60",
+        "next": ["补充sap_补充60"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "补充sap_补充60": {
         "recognition": "OCR",
@@ -317,9 +317,9 @@
         ],
         "action": "Click",
         "post_delay": 300,
-        "next": "扫荡_神眠_等待完成",
+        "next": ["扫荡_神眠_等待完成"],
         "timeout": 80000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "扫荡_神眠_等待完成": {
         "recognition": "OCR",
@@ -333,9 +333,9 @@
         "action": "Click",
         "pre_delay": 400,
         "post_delay": 1000,
-        "next": "停止",
+        "next": ["停止"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "褪色的罪人": {
         "recognition": "TemplateMatch",
@@ -350,7 +350,7 @@
         "pre_delay": 400,
         "post_delay": 400,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度_褪色的罪人": {
         // 100级 "target" : [796,124,42,60]
@@ -376,7 +376,7 @@
         "pre_delay": 400,
         "post_delay": 400,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度_褪色的罪人_确认": {
         "recognition": "TemplateMatch",
@@ -388,11 +388,11 @@
             107,
             43
         ],
-        "next": "扫荡_褪色的罪人",
+        "next": ["扫荡_褪色的罪人"],
         "pre_delay": 400,
         "post_delay": 400,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度_褪色的罪人_确认_2": {
         "recognition": "ColorMatch",
@@ -412,11 +412,11 @@
             107,
             43
         ],
-        "next": "扫荡_褪色的罪人",
+        "next": ["扫荡_褪色的罪人"],
         "pre_delay": 400,
         "post_delay": 400,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "扫荡_褪色的罪人": {
         "recognition": "OCR",
@@ -434,7 +434,7 @@
             "所需材料不足_褪色的罪人"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "扫荡_褪色的罪人_确定": {
         "recognition": "OCR",
@@ -447,9 +447,9 @@
         ],
         "action": "Click",
         "post_delay": 300,
-        "next": "扫荡_褪色的罪人_等待完成",
+        "next": ["扫荡_褪色的罪人_等待完成"],
         "timeout": 80000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "扫荡_褪色的罪人_等待完成": {
         "recognition": "OCR",
@@ -463,9 +463,9 @@
         "action": "Click",
         "pre_delay": 400,
         "post_delay": 1000,
-        "next": "停止",
+        "next": ["停止"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "所需材料不足_褪色的罪人": {
         "recognition": "OCR",
@@ -476,9 +476,9 @@
             259,
             76
         ],
-        "next": "懊悔的新生",
+        "next": ["懊悔的新生"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "罪人_天使": {
         "recognition": "OCR",
@@ -498,9 +498,9 @@
         ],
         "enabled": false,
         "post_delay": 500,
-        "next": "选择难度",
+        "next": ["选择难度"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度": {
         "recognition": "OCR",
@@ -525,7 +525,7 @@
             "选择难度"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度_确认": {
         "recognition": "TemplateMatch",
@@ -538,9 +538,9 @@
             43
         ],
         "post_delay": 300,
-        "next": "出击_神眠",
+        "next": ["出击_神眠"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "选择难度_确认_2": {
         "recognition": "ColorMatch",
@@ -561,9 +561,9 @@
             43
         ],
         "post_delay": 300,
-        "next": "出击_神眠",
+        "next": ["出击_神眠"],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "出击_神眠": {
         "recognition": "OCR",
@@ -582,7 +582,7 @@
             "识别进入房间_神眠",
             "邀请函不足"
         ],
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "邀请函不足": {
         "recognition": "OCR",
@@ -606,7 +606,7 @@
             "点击连战设置_神眠"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击连战设置_神眠": {
         "recognition": "TemplateMatch",
@@ -622,7 +622,7 @@
             "点击连战次数_神眠"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击连战次数_神眠": {
         "recognition": "TemplateMatch",
@@ -644,7 +644,7 @@
             "输入连战次数_神眠"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "输入连战次数_神眠": {
         "action": "InputText",
@@ -653,7 +653,7 @@
             "点击一次_神眠"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "点击一次_神眠": {
         "action": "Click",
@@ -668,7 +668,7 @@
             "点击确定_神眠"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "关闭自动再战_神眠": {
         "recognition": "TemplateMatch",
@@ -699,7 +699,7 @@
             "点击确定_神眠"
         ],
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别进入房间_神眠": {
         "recognition": "TemplateMatch",
@@ -715,7 +715,7 @@
             "识别进入房间1_神眠"
         ],
         "rate_limit": 1000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别进入房间1_神眠": {
         "recognition": "OCR",
@@ -770,7 +770,7 @@
         ],
         "post_delay": 1000,
         "action": "Click",
-        "next": "停止"
+        "next": ["停止"]
     },
     "战斗胜利_神眠": {
         "recognition": "TemplateMatch",
@@ -787,7 +787,7 @@
             "邀请函不足"
         ],
         "timeout": 20000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别是否在关卡中": {
         "recognition": "OCR",
@@ -808,7 +808,7 @@
             "邀请函不足"
         ],
         "timeout": 5000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别是否在连战中": {
         "recognition": "OCR",
@@ -826,7 +826,7 @@
             "邀请函不足"
         ],
         "timeout": 8000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "已完成连战目标_神眠": {
         "recognition": "OCR",
@@ -838,12 +838,12 @@
             145
         ],
         "next": [
-            "识别到返回__神眠_结束"
+            "识别到返回__神眠_结束",
+            "[JumpBack]关闭页面1"
         ],
-        "interrupt": "关闭页面1",
         "post_delay": 500,
         "timeout": 3000,
-        "on_error": "stopapp"
+        "on_error": ["stopapp"]
     },
     "识别到返回__神眠_结束": {
         "recognition": "OCR",

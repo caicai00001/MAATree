@@ -2,7 +2,9 @@
     "stopapp": {
         "action": "StopApp",
         "package": "com.orlesh.yjzs",
-        "next": "start",
+        "next": [
+            "start"
+        ],
         "focus": true,
         "focus_tip": "出现这个说明识别超时自动重启了,如果一直出现这个并且只重启请联系作者",
         "focus_tip_color": "Red"
@@ -21,23 +23,25 @@
         "post_delay": 3000,
         "timeout": 50000,
         "next": [
-            "主页检测"
+            "主页检测",
+            "[JumpBack]ReturnMainButton",
+            "[JumpBack]进入_确定",
+            "[JumpBack]进入游戏_加载中",
+            "[JumpBack]进入",
+            "[JumpBack]点击开始按钮",
+            "[JumpBack]取消",
+            "[JumpBack]点击空白处关闭",
+            "[JumpBack]领取物资",
+            "[JumpBack]关闭页面1",
+            "[JumpBack]关闭周历",
+            "[JumpBack]KinnaraFinishBatttle",
+            "[JumpBack]重试",
+            "[JumpBack]BattleEndReturn",
+            "[JumpBack]SweepEndConfirm"
         ],
-        "interrupt": [
-            "ReturnMainButton",
-            "进入_确定",
-            "进入游戏_加载中",
-            "进入",
-            "点击开始按钮",
-            "取消",
-            "点击空白处关闭",
-            "领取物资",
-            "关闭页面1",
-            "关闭周历",
-            "KinnaraFinishBatttle",
-            "重试"
-        ],
-        "on_error": "stopapp"
+        "on_error": [
+            "stopapp"
+        ]
     },
     "进入_确定": {
         "recognition": "OCR",
@@ -57,7 +61,9 @@
         "pre_delay": 1500,
         "action": "Click",
         "post_delay": 2000,
-        "on_error": "stopapp"
+        "on_error": [
+            "stopapp"
+        ]
     },
     "进入游戏_加载中": {
         "recognition": "TemplateMatch",
@@ -69,7 +75,9 @@
             14
         ],
         "post_delay": 3000,
-        "on_error": "stopapp"
+        "on_error": [
+            "stopapp"
+        ]
     },
     "点击开始按钮": {
         "recognition": "OCR",
@@ -87,8 +95,12 @@
         "recognition": "TemplateMatch",
         "template": "StartUp/标识.png",
         "post_delay": 3000,
-        "next": "等待进入",
-        "on_error": "stopapp"
+        "next": [
+            "等待进入"
+        ],
+        "on_error": [
+            "stopapp"
+        ]
     },
     "等待进入": {
         "recognition": "TemplateMatch",
@@ -96,18 +108,18 @@
         "inverse": true,
         "post_delay": 1000,
         "pre_delay": 1000,
-        "next": "主页检测",
+        "next": [
+            "主页检测",
+            "[JumpBack]取消",
+            "[JumpBack]点击空白处关闭",
+            "[JumpBack]领取物资",
+            "[JumpBack]关闭页面1",
+            "[JumpBack]关闭周历",
+            "[JumpBack]KinnaraFinishBatttle"
+        ],
         "on_error": [
             "stopapp",
             "等待进入0"
-        ],
-        "interrupt": [
-            "取消",
-            "点击空白处关闭",
-            "领取物资",
-            "关闭页面1",
-            "关闭周历",
-            "KinnaraFinishBatttle"
         ]
     },
     "重试": {
@@ -119,7 +131,9 @@
             582,
             270
         ],
-        "next": "stopapp"
+        "next": [
+            "stopapp"
+        ]
     },
     "领取物资": {
         "recognition": "TemplateMatch",
@@ -198,7 +212,9 @@
             309,
             78
         ],
-        "next": "stopapp_断网",
+        "next": [
+            "stopapp_断网"
+        ],
         "focus": true,
         "focus_tip": "网络连接断开,正在重新尝试",
         "focus_tip_color": "Red"
@@ -206,9 +222,19 @@
     "stopapp_断网": {
         "action": "StopApp",
         "package": "com.orlesh.yjzs",
-        "next": "start"
+        "next": [
+            "start"
+        ]
     },
     "礼包检测": {
+        "next": [
+            "[JumpBack]取消",
+            "[JumpBack]点击空白处关闭",
+            "[JumpBack]领取物资",
+            "[JumpBack]关闭页面1",
+            "[JumpBack]关闭周历",
+            "[JumpBack]KinnaraFinishBatttle"
+        ],
         "recognition": "TemplateMatch",
         "template": "StartUp/主页礼包.png",
         "roi": [
@@ -216,14 +242,6 @@
             110,
             151,
             391
-        ],
-        "interrupt": [
-            "取消",
-            "点击空白处关闭",
-            "领取物资",
-            "关闭页面1",
-            "关闭周历",
-            "KinnaraFinishBatttle"
         ]
     },
     "主页检测": {
@@ -237,18 +255,18 @@
             151,
             391
         ],
-        "interrupt": [
-            "取消",
-            "点击空白处关闭",
-            "领取物资",
-            "关闭页面1",
-            "关闭周历",
-            "KinnaraFinishBatttle"
-        ],
         "next": [
-            "礼包检测"
+            "礼包检测",
+            "[JumpBack]取消",
+            "[JumpBack]点击空白处关闭",
+            "[JumpBack]领取物资",
+            "[JumpBack]关闭页面1",
+            "[JumpBack]关闭周历",
+            "[JumpBack]KinnaraFinishBatttle"
         ],
-        "on_error": "stopapp"
+        "on_error": [
+            "stopapp"
+        ]
     },
     "返回主页检测": {
         "recognition": "TemplateMatch",
@@ -261,8 +279,12 @@
             74
         ],
         "timeout": 8000,
-        "next": "主页检测",
-        "on_error": "返回主页检测"
+        "next": [
+            "主页检测"
+        ],
+        "on_error": [
+            "返回主页检测"
+        ]
     },
     "KinnaraFinishBatttle": {
         "recognition": "TemplateMatch",
@@ -277,18 +299,20 @@
     },
     "ReturnMain": {
         "next": [
-            "MainFlag"
+            "MainFlag",
+            "[JumpBack]ReturnMainButton",
+            "[JumpBack]取消",
+            "[JumpBack]点击空白处关闭",
+            "[JumpBack]领取物资",
+            "[JumpBack]关闭页面1",
+            "[JumpBack]关闭周历",
+            "[JumpBack]KinnaraFinishBatttle",
+            "[JumpBack]BattleEndReturn",
+            "[JumpBack]SweepEndConfirm"
         ],
-        "interrupt": [
-            "ReturnMainButton",
-            "取消",
-            "点击空白处关闭",
-            "领取物资",
-            "关闭页面1",
-            "关闭周历",
-            "KinnaraFinishBatttle"
-        ],
-        "on_error": "stopapp"
+        "on_error": [
+            "stopapp"
+        ]
     },
     "ReturnMainButton": {
         "recognition": "TemplateMatch",
@@ -309,6 +333,44 @@
             456,
             388,
             150
+        ]
+    },
+    "BattleEndReturn": {
+        "recognition": "OCR",
+        "expected": [
+            "返回"
+        ],
+        "roi": [
+            908,
+            591,
+            360,
+            118
+        ],
+        "action": "Click"
+    },
+    "SweepEndConfirm": {
+        "recognition": "OCR",
+        "expected": [
+            "确认"
+        ],
+        "roi": [
+            744,
+            591,
+            524,
+            118
+        ],
+        "action": "Click"
+    },
+    "ToError": {
+        "recognition": "OCR",
+        "expected": [
+            "ToError"
+        ],
+        "roi": [
+            1,
+            1,
+            1,
+            1
         ]
     }
 }
