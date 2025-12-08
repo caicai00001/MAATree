@@ -17,7 +17,7 @@
     },
     "ActivityDungeonMain": {
         "recognition": "TemplateMatch",
-        "template": "Activity/AngelGospel/天使福音副本主界面__225_59_153_152__175_9_253_252.png",
+        "template": "Activity/AngelGospel/天使福音副本主界面__814_137_190_121__764_87_290_221.png",
         "action": "Click",
         "next": [
             "ToError",
@@ -32,7 +32,7 @@
     },
     "ActivityDungeonReturn": {
         "recognition": "TemplateMatch",
-        "template": "Activity/AngelGospel/天使福音副本主界面__225_59_153_152__175_9_253_252.png",
+        "template": "Activity/AngelGospel/天使福音副本主界面__814_137_190_121__764_87_290_221.png",
         "action": "Click",
         "next": [
             "ActivityReturnButton"
