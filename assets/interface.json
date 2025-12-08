@@ -253,7 +253,21 @@
                         "clickJoinTheBattle",
                         "teamBattleKinnara",
                         "recognizeEnteringTheRoom_Fire",
-                        "recognizeEnteringTheRoom_1_Fire"
+                        "recognizeEnteringTheRoom_1_Fire",
+                        "[JumpBack]ReturnMainButton",
+                        "[JumpBack]进入_确定",
+                        "[JumpBack]进入游戏_加载中",
+                        "[JumpBack]进入",
+                        "[JumpBack]点击开始按钮",
+                        "[JumpBack]取消",
+                        "[JumpBack]点击空白处关闭",
+                        "[JumpBack]领取物资",
+                        "[JumpBack]关闭页面1",
+                        "[JumpBack]关闭周历",
+                        "[JumpBack]KinnaraFinishBatttle",
+                        "[JumpBack]重试",
+                        "[JumpBack]BattleEndReturn",
+                        "[JumpBack]SweepEndConfirm"
                     ]
                 },
                 "礼包检测": {
