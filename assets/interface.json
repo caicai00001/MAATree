@@ -255,7 +255,9 @@
                         "recognizeEnteringTheRoom_Fire",
                         "recognizeEnteringTheRoom_1_Fire",
                         "[JumpBack]ReturnMainButton",
-                        "[JumpBack]进入_确定",
+                        "[JumpBack]CreateTeamClose",
+                        "[JumpBack]更新_确定",
+                        "[JumpBack]重连房间_确定",
                         "[JumpBack]进入游戏_加载中",
                         "[JumpBack]进入",
                         "[JumpBack]点击开始按钮",
@@ -1263,8 +1265,8 @@
                 {
                     "name": "否",
                     "pipeline_override": {
-                        "进入_确定": {
-                            "expected": "取消"
+                        "重连房间_确定": {
+                            "next": "取消按钮"
                         }
                     }
                 }

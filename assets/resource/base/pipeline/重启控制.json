@@ -25,7 +25,9 @@
         "next": [
             "主页检测",
             "[JumpBack]ReturnMainButton",
-            "[JumpBack]进入_确定",
+            "[JumpBack]CreateTeamClose",
+            "[JumpBack]更新_确定",
+            "[JumpBack]重连房间_确定",
             "[JumpBack]进入游戏_加载中",
             "[JumpBack]进入",
             "[JumpBack]点击开始按钮",
@@ -43,11 +45,46 @@
             "stopapp"
         ]
     },
-    "进入_确定": {
+    "确定按钮": {
         "recognition": "OCR",
         "expected": "确定",
         "action": "Click",
         "post_delay": 5000
+    },
+    "取消按钮": {
+        "recognition": "OCR",
+        "expected": "取消",
+        "action": "Click",
+        "post_delay": 5000
+    },
+    "更新_确定": {
+        "recognition": "OCR",
+        "expected": "更新",
+        "roi": [
+            248,
+            101,
+            784,
+            456
+        ],
+        "next": [
+            "确定按钮"
+        ]
+    },
+    "重连房间_确定": {
+        "recognition": "OCR",
+        "expected": [
+            "未完成",
+            "是否继续"
+        ],
+        "roi": [
+            248,
+            101,
+            784,
+            456
+        ],
+        "next": [
+            "确定按钮"
+        ]
     },
     "进入": {
         "recognition": "TemplateMatch",
@@ -295,7 +332,8 @@
             104,
             25
         ],
-        "action": "Click"
+        "action": "Click",
+        "post_delay": 3000
     },
     "ReturnMain": {
         "next": [
@@ -360,6 +398,21 @@
             118
         ],
         "action": "Click"
+    },
+    "CreateTeamClose": {
+        "recognition": "OCR",
+        "expected": [
+            "创建讨伐队"
+        ],
+        "roi": [
+            344,
+            117,
+            630,
+            297
+        ],
+        "next": [
+            "关闭页面1"
+        ]
     },
     "ToError": {
         "recognition": "OCR",
