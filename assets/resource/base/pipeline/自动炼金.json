@@ -1332,6 +1332,8 @@
         "recognition": "TemplateMatch",
         "template": "Alchemy/奥秘因子.png",
         "roi" : [44,91,720,303],
+        "threshold": 0.9,
+        "order_by": "Score",
         "action": "Click",
         "pre_delay": 100,
         "post_delay": 300,
