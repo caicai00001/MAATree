@@ -42,9 +42,33 @@
             "type": "Click"
         },
         "next": [
-            "SelectAngelSecond",
+            "SelectAngelColor",
             "SelectAngelFirst"
         ]
+    },
+    "SelectAngelColor": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    10,
+                    70,
+                    1254,
+                    574
+                ],
+                "template": [
+                    "AngelBirth/天使光__895_450_120_124__845_400_220_224.png"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "SelectAngelSecond",
+            "SelectAngelColor"
+        ],
+        "post_delay": 2000
     },
     "SelectAngelSecond": {
         "recognition": {

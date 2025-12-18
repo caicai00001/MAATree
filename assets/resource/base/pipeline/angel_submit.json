@@ -1,0 +1,163 @@
+{
+    "AngelSubmitTask": {
+        "next": [
+            "ClickAngelSubmit",
+            "[JumpBack]ReturnMain"
+        ]
+    },
+    "ClickAngelSubmit": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    984,
+                    231,
+                    155,
+                    54
+                ],
+                "template": "AngelSubmit/天使提交入口__984_231_155_54__934_181_255_154.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ClickAngelSubmitColor",
+            "[JumpBack]ClickAngelSubmitSwitch"
+        ]
+    },
+    "ClickAngelSubmitColor": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    26,
+                    227,
+                    1217,
+                    401
+                ],
+                "template": "AngelSubmit/天使提交光__555_233_168_158__505_183_268_258.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "ClickAngelSubmitColorConfirm",
+            "ClickAngelSubmitColor"
+        ]
+    },
+    "ClickAngelSubmitSwitch": {
+        "recognition": {
+            "type": "TemplateMatch",
+            "param": {
+                "roi": [
+                    1161,
+                    325,
+                    103,
+                    64
+                ],
+                "template": "AngelSubmit/天使提交切换按钮__1183_331_64_55__1133_281_147_155.png"
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "ClickAngelSubmitColorConfirm": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    585,
+                    591,
+                    118,
+                    48
+                ],
+                "expected": "确定"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "StartAngelSubmit",
+            "StartAngelSubmitFinish",
+            "ClickAngelSubmitColorConfirm"
+        ]
+    },
+    "StartAngelSubmit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    836,
+                    507,
+                    327,
+                    128
+                ],
+                "expected": "仪式"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "AngelSubmitNo",
+            "[JumpBack]AngelSubmit"
+        ]
+    },
+    "StartAngelSubmitFinish": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    836,
+                    507,
+                    327,
+                    128
+                ],
+                "expected": "完成"
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "AngelSubmit": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    943,
+                    166,
+                    175,
+                    76
+                ],
+                "expected": "领取"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "post_delay": 1200
+    },
+    "AngelSubmitNo": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    943,
+                    166,
+                    175,
+                    76
+                ],
+                "expected": "领取"
+            }
+        },
+        "inverse": true,
+        "next": [
+            "关闭页面1"
+        ]
+    }
+}

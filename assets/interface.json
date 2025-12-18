@@ -189,7 +189,8 @@
                 "EnterDungeonMain": {
                     "next": [
                         "ClickMaterail",
-                        "EnterDungeonMain"
+                        "EnterDungeonMain",
+                        "[JumpBack]AddBPClose"
                     ]
                 }
             },
@@ -397,7 +398,8 @@
                 "EnterDungeonMain": {
                     "next": [
                         "ClickAngel",
-                        "EnterDungeonMain"
+                        "EnterDungeonMain",
+                        "[JumpBack]AddBPClose"
                     ]
                 },
                 "AddAPClick": {
@@ -405,7 +407,10 @@
                         "SelectAngelSecond"
                     ]
                 }
-            }
+            },
+            "option": [
+                "天使属性"
+            ]
         },
         {
             "name": "活动每日",
@@ -424,6 +429,13 @@
             },
             "option": [
                 "活动"
+            ]
+        },
+        {
+            "name": "天使提交",
+            "entry": "AngelSubmitTask",
+            "option": [
+                "天使提交属性"
             ]
         }
     ],
@@ -6607,6 +6619,54 @@
                                 212,
                                 95,
                                 88
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "天使属性": {
+            "cases": [
+                {
+                    "name": "光",
+                    "pipeline_override": {
+                        "SelectAngelColor": {
+                            "template": [
+                                "AngelBirth/天使光__895_450_120_124__845_400_220_224.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "暗",
+                    "pipeline_override": {
+                        "SelectAngelColor": {
+                            "template": [
+                                "AngelBirth/天使暗__1096_450_120_124__1046_400_220_224.png"
+                            ]
+                        }
+                    }
+                }
+            ]
+        },
+        "天使提交属性": {
+            "cases": [
+                {
+                    "name": "光",
+                    "pipeline_override": {
+                        "ClickAngelSubmitColor": {
+                            "template": [
+                                "AngelSubmit/天使提交光__555_233_168_158__505_183_268_258.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "暗",
+                    "pipeline_override": {
+                        "ClickAngelSubmitColor": {
+                            "template": [
+                                "AngelSubmit/天使提交暗__555_233_168_158__505_183_268_258.png"
                             ]
                         }
                     }
