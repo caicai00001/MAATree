@@ -6345,6 +6345,88 @@
         "活动": {
             "cases": [
                 {
+                    "name": "星鲨奇遇",
+                    "pipeline_override": {
+                        "EnterActivityMain": {
+                            "template": "Activity/StarShark/星鲨奇遇活动入口__96_455_234_90__46_405_334_190.png"
+                        },
+                        "ActivityMain": {
+                            "template": "Activity/StarShark/星鲨奇遇主界面__410_486_508_182__360_436_608_282.png"
+                        },
+                        "EnterActivityDungeon": {
+                            "template": "Activity/StarShark/星鲨奇遇副本入口__899_123_238_85__849_73_338_185.png"
+                        },
+                        "ActivityDungeonMain": {
+                            "template": "Activity/StarShark/星鲨奇遇副本主界面__414_498_316_106__364_448_416_206.png"
+                        },
+                        "ActivityDungeonReturn": {
+                            "template": "Activity/StarShark/星鲨奇遇副本主界面__414_498_316_106__364_448_416_206.png"
+                        },
+                        "ActivityMultiContinue": {
+                            "roi": [
+                                472,
+                                194,
+                                310,
+                                165
+                            ]
+                        },
+                        "ActivitySoloMultiSwitch": {
+                            "roi": [
+                                941,
+                                84,
+                                107,
+                                40
+                            ]
+                        },
+                        "ActivitySoloDungeon1": {
+                            "roi": [
+                                886,
+                                82,
+                                360,
+                                347
+                            ]
+                        },
+                        "ActivitySoloDungeon2": {
+                            "enabled": false
+                        },
+                        "ActivitySoloDungeon3": {
+                            "enabled": false
+                        },
+                        "ActivityMultiDungeon1": {
+                            "roi": [
+                                886,
+                                82,
+                                360,
+                                347
+                            ]
+                        },
+                        "ActivityMultiDungeon2": {
+                            "enabled": false
+                        },
+                        "ActivityMultiDungeon3": {
+                            "enabled": false
+                        },
+                        "EnterActivityShop": {
+                            "expected": [
+                                "宴前",
+                                "采购"
+                            ]
+                        },
+                        "EnterActivityTask": {
+                            "expected": [
+                                "覆沙",
+                                "沉鱼"
+                            ],
+                            "roi": [
+                                58,
+                                432,
+                                243,
+                                162
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "天使福音",
                     "pipeline_override": {}
                 },
