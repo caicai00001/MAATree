@@ -53,6 +53,28 @@
         579
       ],
       "next": [
+        "点击每日物资确认",
+        "点击每日物资"
+      ],
+      "threshold": 0.95,
+      "action": "Click",
+      "pre_delay": 150,
+      "post_delay": 150,
+      "timeout": 3000,
+      "on_error": [
+        "stopapp"
+      ]
+    },
+    "点击每日物资确认": {
+      "recognition": "OCR",
+      "expected": "每日",
+      "roi": [
+        489,
+        315,
+        605,
+        55
+      ],
+      "next": [
         "12点每日物资待领取",
         "18点每日物资待领取",
         "每日领取关闭"
