@@ -274,6 +274,7 @@
             "Alchemy/光龙材料.png"
         ],
         "action": "Click",
+        "threshold": 0.9,
         "roi": [
             66,
             74,
