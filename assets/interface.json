@@ -6345,6 +6345,100 @@
         "活动": {
             "cases": [
                 {
+                    "name": "星夜极光",
+                    "pipeline_override": {
+                        "EnterActivityMain": {
+                            "template": "Activity/StarryAurora/星夜极光活动入口__100_473_222_75__50_423_322_175.png"
+                        },
+                        "ActivityMain": {
+                            "template": "Activity/StarryAurora/星夜极光主界面__317_511_454_128__267_461_554_228.png"
+                        },
+                        "EnterActivityDungeon": {
+                            "template": "Activity/StarryAurora/星夜极光副本入口__985_470_131_43__935_420_231_143.png"
+                        },
+                        "ActivityDungeonMain": {
+                            "template": "Activity/StarryAurora/星夜极光副本主界面__580_130_178_184__530_80_278_284.png"
+                        },
+                        "ActivityDungeonReturn": {
+                            "template": "Activity/StarryAurora/星夜极光副本主界面__580_130_178_184__530_80_278_284.png"
+                        },
+                        "ActivityMultiContinue": {
+                            "roi": [
+                                472,
+                                194,
+                                310,
+                                165
+                            ]
+                        },
+                        "ActivitySoloMultiSwitch": {
+                            "roi": [
+                                476,
+                                625,
+                                140,
+                                63
+                            ]
+                        },
+                        "ActivitySoloDungeon1": {
+                            "roi": [
+                                558,
+                                448,
+                                300,
+                                149
+                            ]
+                        },
+                        "ActivitySoloDungeon2": {
+                            "enabled": false
+                        },
+                        "ActivitySoloDungeon3": {
+                            "enabled": false
+                        },
+                        "ActivityMultiDungeon1": {
+                            "roi": [
+                                558,
+                                448,
+                                300,
+                                149
+                            ]
+                        },
+                        "ActivityMultiDungeon2": {
+                            "enabled": false
+                        },
+                        "ActivityMultiDungeon3": {
+                            "enabled": false
+                        },
+                        "EnterActivityShop": {
+                            "expected": [
+                                "兑换",
+                                "商店"
+                            ],
+                            "roi": [
+                                12,
+                                430,
+                                216,
+                                184
+                            ]
+                        },
+                        "EnterActivityTask": {
+                            "expected": [
+                                "活动",
+                                "任务"
+                            ],
+                            "roi": [
+                                12,
+                                430,
+                                216,
+                                184
+                            ],
+                            "target_offset": [
+                                0,
+                                -30,
+                                0,
+                                0
+                            ]
+                        }
+                    }
+                },
+                {
                     "name": "星鲨奇遇",
                     "pipeline_override": {
                         "EnterActivityMain": {
