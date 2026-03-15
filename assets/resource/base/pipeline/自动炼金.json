@@ -1,5 +1,11 @@
 {
     "lc点击一次": {
+        "target": [
+            1200,
+            30,
+            10,
+            10
+        ],
         "action": "Click"
     },
     "lc点击空白处": {
@@ -180,7 +186,10 @@
     },
     "一键炼成_常规熔炼": {
         "recognition": "OCR",
-        "expected": "一键",
+        "expected": [
+            "一键",
+            "炼成"
+        ],
         "roi": [
             1075,
             617,
@@ -361,10 +370,10 @@
         "recognition": "OCR",
         "expected": "MAX",
         "roi": [
-            758,
-            279,
-            144,
-            106
+            727,
+            308,
+            211,
+            159
         ],
         "action": "Click",
         "pre_delay": 100,
@@ -664,12 +673,15 @@
     },
     "一键炼成_珍品熔炼_一键选择": {
         "recognition": "OCR",
-        "expected": "键选",
+        "expected": [
+            "键",
+            "选择"
+        ],
         "roi": [
-            821,
-            13,
-            125,
-            58
+            834,
+            555,
+            179,
+            88
         ],
         "action": "Click",
         "pre_delay": 200,
@@ -889,10 +901,10 @@
         "recognition": "OCR",
         "expected": "MAX",
         "roi": [
-            758,
-            279,
-            144,
-            106
+            727,
+            308,
+            211,
+            159
         ],
         "action": "Click",
         "pre_delay": 100,
@@ -1011,10 +1023,10 @@
         "recognition": "OCR",
         "expected": "MAX",
         "roi": [
-            758,
-            279,
-            144,
-            106
+            727,
+            308,
+            211,
+            159
         ],
         "action": "Click",
         "pre_delay": 100,
@@ -1245,10 +1257,10 @@
         "recognition": "OCR",
         "expected": "MAX",
         "roi": [
-            758,
-            279,
-            144,
-            106
+            727,
+            308,
+            211,
+            159
         ],
         "action": "Click",
         "pre_delay": 100,
@@ -1370,10 +1382,10 @@
         "recognition": "OCR",
         "expected": "MAX",
         "roi": [
-            758,
-            279,
-            144,
-            106
+            727,
+            308,
+            211,
+            159
         ],
         "action": "Click",
         "pre_delay": 100,
