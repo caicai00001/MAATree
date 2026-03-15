@@ -396,10 +396,6 @@
             "entry": "Supply"
         },
         {
-            "name": "test",
-            "entry": "lc点击一次"
-        },
-        {
             "name": "天使诞生每日",
             "entry": "AngelBirth",
             "pipeline_override": {
@@ -3949,7 +3945,14 @@
                     "name": "老王",
                     "pipeline_override": {
                         "助战选择": {
-                            "expected": "15"
+                            "expected": [
+                                "凝冰",
+                                "劫炎",
+                                "砾岩",
+                                "飓风",
+                                "煌光",
+                                "幽冥",
+                            ]
                         }
                     }
                 },
@@ -3957,7 +3960,14 @@
                     "name": "方阵",
                     "pipeline_override": {
                         "助战选择": {
-                            "expected": "13"
+                            "expected": [
+                                "绀碧",
+                                "红莲",
+                                "钢岩",
+                                "暴风",
+                                "辉煌",
+                                "宵暗",
+                            ]
                         }
                     }
                 }
@@ -6822,6 +6832,36 @@
                             ]
                         }
                     }
+                },
+                {
+                    "name": "土",
+                    "pipeline_override": {
+                        "SelectAngelColor": {
+                            "template": [
+                                "AngelBirth/天使土__476_452_121_125__426_402_221_225.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "水",
+                    "pipeline_override": {
+                        "SelectAngelColor": {
+                            "template": [
+                                "AngelBirth/天使水__261_450_122_126__211_400_222_226.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "火",
+                    "pipeline_override": {
+                        "SelectAngelColor": {
+                            "template": [
+                                "AngelBirth/天使火__61_448_123_127__11_398_223_227.png"
+                            ]
+                        }
+                    }
                 }
             ]
         },
@@ -6843,6 +6883,36 @@
                         "ClickAngelSubmitColor": {
                             "template": [
                                 "AngelSubmit/天使提交暗__555_233_168_158__505_183_268_258.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "土",
+                    "pipeline_override": {
+                        "ClickAngelSubmitColor": {
+                            "template": [
+                                "AngelSubmit/天使提交土__555_233_168_158__505_183_268_258.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "水",
+                    "pipeline_override": {
+                        "ClickAngelSubmitColor": {
+                            "template": [
+                                "AngelSubmit/天使提交水__555_233_168_158__505_183_268_258.png"
+                            ]
+                        }
+                    }
+                },
+                {
+                    "name": "火",
+                    "pipeline_override": {
+                        "ClickAngelSubmitColor": {
+                            "template": [
+                                "AngelSubmit/天使提交火__555_233_168_158__505_183_268_258.png"
                             ]
                         }
                     }
