@@ -17,6 +17,10 @@ on:
       - "**.py"
   workflow_dispatch:
 
+env:
+  MAA_FRAMEWORK_VERSION: "v5.9.0"
+  MFAA_VERSION: "v2.10.9"
+
 permissions:
   contents: write
   actions: write
@@ -85,8 +89,7 @@ jobs:
         with:
           repository: MaaXYZ/MaaFramework
           fileName: "MAA-win-${{ matrix.arch }}*"
-          latest: true
-          preRelease: false
+          tag: ${{ env.MAA_FRAMEWORK_VERSION }}
           out-file-path: "deps"
           extract: true
 
@@ -94,9 +97,9 @@ jobs:
         id: download_mfa
         uses: robinraju/release-downloader@v1
         with:
-          repository: caicai00001/MFAAvalonia
-          fileName: "MFAAvalonia-*-win-x64*"
-          latest: true
+          repository: SweetSmellFox/MFAAvalonia
+          fileName: "MFAAvalonia-*-win-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
+          tag: ${{ env.MFAA_VERSION }}
           out-file-path: "MFA"
           extract: true
 
@@ -106,6 +109,28 @@ jobs:
           ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
           rm -f "${ARCHIVE_FILE_PATH}"
           echo "Archive cleanup command executed for MFAAvalonia on Windows."
+
+      - name: Convert PNG to ICO
+        if: matrix.arch == 'x86_64'
+        shell: bash
+        run: |
+          # 安装 ImageMagick
+          choco install imagemagick -y
+
+          # 转换 PNG 到 ICO
+          magick convert assets/logo.png -define icon:auto-resize=256,128,64,48,32,24,16 logo.ico
+
+      - name: Modify MFAAvalonia exe icon
+        if: matrix.arch == 'x86_64'
+        shell: bash
+        run: |
+          # 下载 rcedit
+          curl -L https://github.com/electron/rcedit/releases/download/v2.0.0/rcedit-x64.exe -o rcedit.exe
+
+          # 修改 exe 图标
+          ./rcedit.exe "MFA/MFAAvalonia.exe" --set-icon "logo.ico"
+
+          echo "MFAAvalonia icon modified successfully"
 
       - name: Setup Embed Python on Windows
         shell: bash
@@ -126,138 +151,27 @@ jobs:
           fi
           cp "tools/DependencySetup_依赖库安装.bat" install/
 
+      - name: Replace Assets with custom assets folder
+        shell: bash
+        run: |
+          # 删除大写的 Assets 文件夹
+          if [ -d "install/Assets" ]; then
+            rm -rf install/Assets
+            echo "Removed original Assets folder"
+          fi
+
+          # 创建小写的 assets 文件夹
+          mkdir -p install/assets
+
+          # 如果有自定义图标，复制并重命名为 logo.ico
+          if [ -f "logo.ico" ]; then
+            cp logo.ico install/assets/logo.ico
+            echo "Copied custom icon to assets/logo.ico"
+          fi
+
       - uses: actions/upload-artifact@v4
         with:
           name: MAATree-win-${{ matrix.arch }}
-          path: "install"
-
-  linux:
-    needs: meta
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        arch: [aarch64, x86_64]
-      fail-fast: false
-
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Download MaaFramework for Linux
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MaaFramework
-          fileName: "MAA-linux-${{ matrix.arch }}*"
-          latest: true
-          preRelease: false
-          out-file-path: "deps"
-          extract: true
-
-      - name: Download MFAAvalonia for Linux
-        id: download_mfa
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: caicai00001/MFAAvalonia
-          fileName: "MFAAvalonia-*-linux-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
-          latest: true
-          out-file-path: "MFA"
-          extract: true
-
-      - name: Clean up MFAAvalonia archive on Linux
-        shell: bash
-        run: |
-          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
-          rm -f "${ARCHIVE_FILE_PATH}"
-          echo "Archive cleanup command executed for MFAAvalonia on Linux."
-
-      - name: Install on Linux
-        shell: bash
-        run: |
-          PYTHON_EXECUTABLE="python"
-          echo "Using Python executable: $PYTHON_EXECUTABLE for Linux"
-          $PYTHON_EXECUTABLE ./tools/install.py ${{ needs.meta.outputs.tag }}
-          if [ -d "MFA" ]; then
-            echo "Copying MFA files to install directory on Linux..."
-            mkdir -p install
-            rsync -av --ignore-existing MFA/ install/
-          else
-            echo "MFA directory not found on Linux, skipping copy."
-          fi
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MAATree-linux-${{ matrix.arch }}
-          path: "install"
-
-  macos:
-    needs: meta
-    runs-on: macos-latest
-    strategy:
-      matrix:
-        arch: [aarch64, x86_64]
-      fail-fast: false
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          submodules: true
-
-      - name: Download MaaFramework for macOS
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: MaaXYZ/MaaFramework
-          fileName: "MAA-macos-${{ matrix.arch }}*"
-          latest: true
-          out-file-path: "deps"
-          extract: true
-
-      - name: Download MFAAvalonia for macOS
-        id: download_mfa
-        uses: robinraju/release-downloader@v1
-        with:
-          repository: caicai00001/MFAAvalonia
-          fileName: "MFAAvalonia-*-osx-${{ matrix.arch == 'x86_64' && 'x64' || 'arm64' }}*"
-          latest: true
-          out-file-path: "MFA"
-          extract: true
-
-      - name: Clean up MFAAvalonia archive on macOS
-        shell: bash
-        run: |
-          ARCHIVE_FILE_PATH="${{ fromJson(steps.download_mfa.outputs.downloaded_files)[0] }}"
-          rm -f "${ARCHIVE_FILE_PATH}"
-          echo "Archive cleanup command executed for MFAAvalonia on macOS."
-
-      - name: Setup Embed Python on macOS
-        shell: bash
-        run: |
-          python3 tools/ci/setup_embed_python.py
-          EMBED_PYTHON_PATH="./install/python/bin/python3"
-          if [ -f "$EMBED_PYTHON_PATH" ]; then
-            echo "Setting execute permission for $EMBED_PYTHON_PATH"
-            chmod +x "$EMBED_PYTHON_PATH"
-          else
-            echo "Warning: Embedded Python executable not found at $EMBED_PYTHON_PATH. Skipping chmod."
-          fi
-
-      - name: Install on macOS
-        shell: bash
-        run: |
-          PYTHON_EXECUTABLE="./install/python/bin/python3"
-          echo "Using Python executable: $PYTHON_EXECUTABLE for macOS"
-          $PYTHON_EXECUTABLE ./tools/install.py ${{ needs.meta.outputs.tag }}
-
-          if [ -d "MFA" ]; then
-            echo "Copying MFA files to install directory on macOS..."
-            mkdir -p install
-            rsync -av --ignore-existing MFA/ install/ # Using rsync like on Linux
-          else
-            echo "MFA directory not found on macOS, skipping copy."
-          fi
-
-      - uses: actions/upload-artifact@v4
-        with:
-          name: MAATree-macos-${{ matrix.arch }}
           path: "install"
 
   changelog:
@@ -283,7 +197,7 @@ jobs:
 
   release:
     if: ${{ needs.meta.outputs.is_release == 'true' }}
-    needs: [meta, windows, linux, macos, changelog]
+    needs: [meta, windows, changelog]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/download-artifact@v4
