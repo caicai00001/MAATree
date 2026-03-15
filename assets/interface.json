@@ -3971,9 +3971,6 @@
                         "selectTaoyuanAttribute": {
                             "expected": "朱雀"
                         },
-                        "lostItem": {
-                            "template": "GoldAbyss/迷失之物-火.png"
-                        },
                         "LostThings": {
                             "template": "GoldAbyss/遗落之物-火.png"
                         },
@@ -3987,9 +3984,6 @@
                     "pipeline_override": {
                         "selectTaoyuanAttribute": {
                             "expected": "玄武"
-                        },
-                        "lostItem": {
-                            "template": "GoldAbyss/迷失之物-水.png"
                         },
                         "LostThings": {
                             "template": "GoldAbyss/遗落之物-水.png"
@@ -4005,9 +3999,6 @@
                         "selectTaoyuanAttribute": {
                             "expected": "白虎"
                         },
-                        "lostItem": {
-                            "template": "GoldAbyss/迷失之物-地.png"
-                        },
                         "LostThings": {
                             "template": "GoldAbyss/遗落之物-地.png"
                         },
@@ -4021,9 +4012,6 @@
                     "pipeline_override": {
                         "selectTaoyuanAttribute": {
                             "expected": "青龙"
-                        },
-                        "lostItem": {
-                            "template": "GoldAbyss/迷失之物-风.png"
                         },
                         "LostThings": {
                             "template": "GoldAbyss/遗落之物-风.png"
@@ -4039,9 +4027,6 @@
                         "selectTaoyuanAttribute": {
                             "expected": "勾陈"
                         },
-                        "lostItem": {
-                            "template": "GoldAbyss/迷失之物-光.png"
-                        },
                         "LostThings": {
                             "template": "GoldAbyss/遗落之物-光.png"
                         },
@@ -4055,9 +4040,6 @@
                     "pipeline_override": {
                         "selectTaoyuanAttribute": {
                             "expected": "腾蛇"
-                        },
-                        "lostItem": {
-                            "template": "GoldAbyss/迷失之物-暗.png"
                         },
                         "LostThings": {
                             "template": "GoldAbyss/遗落之物-暗.png"
@@ -4074,6 +4056,9 @@
                 {
                     "name": "60级(迷失之物)",
                     "pipeline_override": {
+                        "lostItem": {
+                            "expected": "迷失"
+                        },
                         "startAutoTaoyuanTownship": {
                             "next": [
                                 "lostItem",
@@ -4089,6 +4074,12 @@
                 {
                     "name": "80级(遗落之物)",
                     "pipeline_override": {
+                        "lostItem_2": {
+                            "expected": "80"
+                        },
+                        "lostItem": {
+                            "expected": "遗落"
+                        },
                         "startAutoTaoyuanTownship": {
                             "next": [
                                 "LostThings",
@@ -4104,6 +4095,11 @@
                 {
                     "name": "100级",
                     "pipeline_override": {
+                        "selectTaoyuanAttribute": {
+                            "next": [
+                                "theMasterOfTaoyuan"
+                            ]
+                        },
                         "theMasterOfTaoyuan_Difficulty": {
                             "target": [
                                 794,
@@ -4125,6 +4121,11 @@
                 {
                     "name": "120级",
                     "pipeline_override": {
+                        "selectTaoyuanAttribute": {
+                            "next": [
+                                "theMasterOfTaoyuan"
+                            ]
+                        },
                         "theMasterOfTaoyuan_Difficulty": {
                             "target": [
                                 801,
@@ -4146,6 +4147,11 @@
                 {
                     "name": "150级",
                     "pipeline_override": {
+                        "selectTaoyuanAttribute": {
+                            "next": [
+                                "theMasterOfTaoyuan"
+                            ]
+                        },
                         "theMasterOfTaoyuan_Difficulty": {
                             "target": [
                                 801,
@@ -4167,6 +4173,11 @@
                 {
                     "name": "175级",
                     "pipeline_override": {
+                        "selectTaoyuanAttribute": {
+                            "next": [
+                                "theMasterOfTaoyuan"
+                            ]
+                        },
                         "theMasterOfTaoyuan_Difficulty": {
                             "target": [
                                 800,
@@ -4188,6 +4199,11 @@
                 {
                     "name": "200级",
                     "pipeline_override": {
+                        "selectTaoyuanAttribute": {
+                            "next": [
+                                "theMasterOfTaoyuan"
+                            ]
+                        },
                         "theMasterOfTaoyuan_Difficulty": {
                             "target": [
                                 800,

@@ -47,18 +47,33 @@
     "on_error": ["stopapp"]
   },
   "lostItem": {
-    "recognition": "TemplateMatch",
-    "template": "GoldAbyss/迷失之物-火.png",
-    "threshold": 0.85,
+    "recognition": "OCR",
+    "expected": [
+      "迷失"
+    ],
     "roi" : [78,232,1184,227],
     "action": "Click",
-    "next": ["lostItem_1"],
+    "next": [
+      "lostItem_1",
+      "lostItem"
+    ],
     "pre_delay": 350,
     "post_delay": 350,
     "timeout": 3000,
     "on_error": ["stopapp"]
   },
   "lostItem_1": {
+    "recognition": "OCR",
+    "expected": [
+      "之",
+      "物"
+    ],
+    "roi": [
+      865,
+      107,
+      234,
+      84
+    ],
     "target": [
       810,
       446,
@@ -77,12 +92,12 @@
   },
   "lostItem_2": {
     "recognition": "OCR",
-    "expected": "Lv60",
+    "expected": "60",
     "roi": [
-      1014,
+      861,
       111,
-      87,
-      48
+      240,
+      110
     ],
     "action": "Click",
     "next": ["mopping_lostItem"],
