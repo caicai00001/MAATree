@@ -1,0 +1,90 @@
+{
+    "Supply": {
+        "next": [
+            "SupplyMain",
+            "ClickSupply",
+            "[JumpBack]ReturnMain"
+        ]
+    },
+    "ClickSupply": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    24,
+                    626,
+                    842,
+                    79
+                ],
+                "expected": "手记"
+            }
+        },
+        "action": {
+            "type": "Click"
+        },
+        "next": [
+            "SupplyMain",
+            "ClickSupply"
+        ]
+    },
+    "SupplyMain": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    404,
+                    42,
+                    798,
+                    81
+                ],
+                "expected": [
+                    "探求",
+                    "手记",
+                    "一键领取"
+                ]
+            }
+        },
+        "next": [
+            "SupplyNotGain",
+            "[JumpBack]SupplyGain",
+            "[JumpBack]点击空白处关闭"
+        ]
+    },
+    "SupplyGain": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    925,
+                    21,
+                    305,
+                    108
+                ],
+                "expected": [
+                    "一键",
+                    "领取"
+                ]
+            }
+        },
+        "action": {
+            "type": "Click"
+        }
+    },
+    "SupplyNotGain": {
+        "recognition": {
+            "type": "OCR",
+            "param": {
+                "roi": [
+                    468,
+                    309,
+                    373,
+                    99
+                ],
+                "expected": [
+                    "暂无",
+                    "可领取"
+                ]
+            }
+        }
+    }
+}

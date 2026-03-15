@@ -27,6 +27,7 @@
             "[JumpBack]ReturnMainButton",
             "[JumpBack]CreateTeamClose",
             "[JumpBack]更新_确定",
+            "[JumpBack]QuickJoinCancel",
             "[JumpBack]重连房间_确定",
             "[JumpBack]进入游戏_加载中",
             "[JumpBack]进入",
@@ -346,7 +347,8 @@
             "[JumpBack]关闭周历",
             "[JumpBack]KinnaraFinishBatttle",
             "[JumpBack]BattleEndReturn",
-            "[JumpBack]SweepEndConfirm"
+            "[JumpBack]SweepEndConfirm",
+            "[JumpBack]QuickJoinCancel"
         ],
         "on_error": [
             "stopapp"
@@ -424,6 +426,35 @@
             1,
             1,
             1
+        ]
+    },
+    "QuickJoinCancel": {
+        "recognition": "OCR",
+        "expected": [
+            "快速",
+            "加入"
+        ],
+        "roi": [
+            509,
+            93,
+            219,
+            136
+        ],
+        "next": [
+            "QuickJoinCancelClick"
+        ]
+    },
+    "QuickJoinCancelClick": {
+        "recognition": "OCR",
+        "expected": [
+            "取消"
+        ],
+        "action": "Click",
+        "roi": [
+            424,
+            452,
+            144,
+            69
         ]
     }
 }

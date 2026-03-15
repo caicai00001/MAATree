@@ -227,6 +227,17 @@
         ],
         "action": "Click"
     },
+    "AddBPClose1": {
+        "recognition": "TemplateMatch",
+        "template": "Common/BP界面关闭按钮__1181_81_31_32__1131_31_131_132.png",
+        "roi": [
+            1181,
+            81,
+            31,
+            32
+        ],
+        "action": "Click"
+    },
     "AddBPConfirm": {
         "recognition": "TemplateMatch",
         "template": "Common/BP使用按钮__775_407_58_34__725_357_158_134.png",

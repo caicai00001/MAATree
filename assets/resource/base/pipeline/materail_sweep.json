@@ -66,6 +66,7 @@
         "action": {
             "type": "Click"
         },
+        "post_wait_freezes": 500,
         "next": [
             "MaterailMain",
             "SelectMaterailSecond"
@@ -76,10 +77,10 @@
             "type": "OCR",
             "param": {
                 "roi": [
-                    875,
-                    105,
-                    226,
-                    54
+                    864,
+                    104,
+                    297,
+                    135
                 ],
                 "expected": "特级"
             }

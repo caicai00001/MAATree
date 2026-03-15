@@ -50,88 +50,88 @@
             },
             "repeatable": false
         },
-        {
-            "name": "自动主线扫荡(确保剩余足够的体力药)",
-            "entry": "主线扫荡开始",
-            "option": [
-                "扫荡关卡"
-            ],
-            "repeatable": false
-        },
-        {
-            "name": "极难单种材料(确保剩余足够的体力药)",
-            "entry": "主线扫荡开始",
-            "option": [
-                "极难材料"
-            ],
-            "pipeline_override": {
-                "zx点击难度": {
-                    "expected": "极难",
-                    "next": [
-                        "体力判定足够",
-                        "检测补体0"
-                    ]
-                },
-                "zx下一章": {
-                    "next": [
-                        "体力判定足够",
-                        "检测补体0"
-                    ]
-                },
-                "zx识别结束": {
-                    "expected": "第六章"
-                },
-                "等待进入": {
-                    "next": "主页检测"
-                },
-                "主页检测": {
-                    "next": "主线扫荡开始"
-                },
-                "补体力后的点击": {
-                    "next": "扫荡极难材料"
-                },
-                "检测体力是否为两位数_是": {
-                    "expected": "^([1-9]|[1-3]\\d)$"
-                },
-                "检测体力是否为两位数_否": {
-                    "expected": "^[1-9]\\d{2}$"
-                },
-                "补体2": {
-                    "expected": "^1\\d{2}$"
-                },
-                "补体3": {
-                    "expected": "^1\\d{2}$"
-                },
-                "补体4": {
-                    "expected": "^1\\d{2}$"
-                },
-                "补体5": {
-                    "expected": "^1\\d{2}$"
-                },
-                "小红瓶补体1": {
-                    "expected": "^1\\d{2}$"
-                },
-                "小红瓶补体2": {
-                    "expected": "^1\\d{2}$"
-                },
-                "小红瓶补体3": {
-                    "expected": "^1\\d{2}$"
-                },
-                "小红瓶补体4": {
-                    "expected": "^1\\d{2}$"
-                },
-                "小红瓶补体5": {
-                    "expected": "^1\\d{2}$"
-                },
-                "检测补体1(使用)": {
-                    "expected": "^1\\d{2}$"
-                },
-                "检测补体2(超出)": {
-                    "next": "扫荡极难材料",
-                    "expected": "^([2-9]\\d{2})$"
-                }
-            }
-        },
+        // {
+        //     "name": "自动主线扫荡(确保剩余足够的体力药)",
+        //     "entry": "主线扫荡开始",
+        //     "option": [
+        //         "扫荡关卡"
+        //     ],
+        //     "repeatable": false
+        // },
+        // {
+        //     "name": "极难单种材料(确保剩余足够的体力药)",
+        //     "entry": "主线扫荡开始",
+        //     "option": [
+        //         "极难材料"
+        //     ],
+        //     "pipeline_override": {
+        //         "zx点击难度": {
+        //             "expected": "极难",
+        //             "next": [
+        //                 "体力判定足够",
+        //                 "检测补体0"
+        //             ]
+        //         },
+        //         "zx下一章": {
+        //             "next": [
+        //                 "体力判定足够",
+        //                 "检测补体0"
+        //             ]
+        //         },
+        //         "zx识别结束": {
+        //             "expected": "第六章"
+        //         },
+        //         "等待进入": {
+        //             "next": "主页检测"
+        //         },
+        //         "主页检测": {
+        //             "next": "主线扫荡开始"
+        //         },
+        //         "补体力后的点击": {
+        //             "next": "扫荡极难材料"
+        //         },
+        //         "检测体力是否为两位数_是": {
+        //             "expected": "^([1-9]|[1-3]\\d)$"
+        //         },
+        //         "检测体力是否为两位数_否": {
+        //             "expected": "^[1-9]\\d{2}$"
+        //         },
+        //         "补体2": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "补体3": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "补体4": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "补体5": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "小红瓶补体1": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "小红瓶补体2": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "小红瓶补体3": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "小红瓶补体4": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "小红瓶补体5": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "检测补体1(使用)": {
+        //             "expected": "^1\\d{2}$"
+        //         },
+        //         "检测补体2(超出)": {
+        //             "next": "扫荡极难材料",
+        //             "expected": "^([2-9]\\d{2})$"
+        //         }
+        //     }
+        // },
         {
             "name": "每日物资",
             "entry": "每日物资领取-3.10版本",
@@ -163,19 +163,19 @@
             },
             "repeatable": false
         },
-        {
-            "name": "扫荡一次素材关卡",
-            "entry": "开始扫荡一次素材关卡",
-            "pipeline_override": {
-                "等待进入": {
-                    "next": "主页检测"
-                },
-                "礼包检测": {
-                    "next": "开始扫荡一次素材关卡"
-                }
-            },
-            "repeatable": false
-        },
+        // {
+        //     "name": "扫荡一次素材关卡",
+        //     "entry": "开始扫荡一次素材关卡",
+        //     "pipeline_override": {
+        //         "等待进入": {
+        //             "next": "主页检测"
+        //         },
+        //         "礼包检测": {
+        //             "next": "开始扫荡一次素材关卡"
+        //         }
+        //     },
+        //     "repeatable": false
+        // },
         {
             "name": "素材关卡扫荡",
             "entry": "MaterailSweep",
@@ -190,7 +190,7 @@
                     "next": [
                         "ClickMaterail",
                         "EnterDungeonMain",
-                        "[JumpBack]AddBPClose"
+                        "[JumpBack]AddBPClose1"
                     ]
                 }
             },
@@ -214,91 +214,91 @@
             },
             "repeatable": false
         },
-        {
-            "name": "自动助战任务(+领取每日奖励)",
-            "entry": "助战任务开始",
-            "pipeline_override": {
-                "输入连战次数": {
-                    "input_text": "5"
-                },
-                "xdr战斗确认": {
-                    "next": [
-                        "搜索中",
-                        "xdr识别进入房间",
-                        "xdr识别进入房间1",
-                        "返回主页检测"
-                    ]
-                },
-                "礼包检测": {
-                    "next": "检测助战任务是否完成1"
-                },
-                "等待进入": {
-                    "next": "主页检测"
-                },
-                "点击确定": {
-                    "next": "点击开始自动战斗"
-                },
-                "点击自动战斗": {
-                    "next": "点击启用建房"
-                }
-            },
-            "repeatable": false
-        },
-        {
-            "name": "自动紧纳罗",
-            "entry": "startAutoKinnara",
-            "pipeline_override": {
-                "start": {
-                    "next":[
-                        "主页检测",
-                        "clickJoinTheBattle",
-                        "teamBattleKinnara",
-                        "recognizeEnteringTheRoom_Fire",
-                        "recognizeEnteringTheRoom_1_Fire",
-                        "[JumpBack]ReturnMainButton",
-                        "[JumpBack]CreateTeamClose",
-                        "[JumpBack]更新_确定",
-                        "[JumpBack]重连房间_确定",
-                        "[JumpBack]进入游戏_加载中",
-                        "[JumpBack]进入",
-                        "[JumpBack]点击开始按钮",
-                        "[JumpBack]取消",
-                        "[JumpBack]点击空白处关闭",
-                        "[JumpBack]领取物资",
-                        "[JumpBack]关闭页面1",
-                        "[JumpBack]关闭周历",
-                        "[JumpBack]KinnaraFinishBatttle",
-                        "[JumpBack]重试",
-                        "[JumpBack]BattleEndReturn",
-                        "[JumpBack]SweepEndConfirm"
-                    ]
-                },
-                "礼包检测": {
-                    "next": "startAutoKinnara"
-                }
-            },
-            "option": [
-                "(光劫使)出战队伍",
-                "(光劫使)助战虚数体",
-                "(暗劫使)出战队伍",
-                "(暗劫使)助战虚数体",
-                "(火劫使)出战队伍",
-                "(火劫使)助战虚数体",
-                "(水劫使)出战队伍",
-                "(水劫使)助战虚数体",
-                "(土劫使)出战队伍",
-                "(土劫使)助战虚数体",
-                "(风劫使)出战队伍",
-                "(风劫使)助战虚数体",
-                "紧纳罗出战属性",
-                "紧纳罗出战队伍",
-                "紧纳罗助战虚宿体",
-                "紧纳罗讨伐出战顺序"
-            ],
-            "doc": "[color:blue][size:20]自动讨伐紧那罗需配置好队伍[/size][/color]\n[color:red][size:20]好友助战机甲需配置：需在还有列表中设置星标，确保每个队伍所指定的机甲均在前三个助战位置中[/size][/color]\n[color:red][size:20]每个劫使均可配置指定出战队伍1~6队,紧罗本体需配置队伍需与劫使分开以免出现异常。[/size][/color]",
-            "repeatable": true,
-            "repeat_count": 1
-        },
+        // {
+        //     "name": "自动助战任务(+领取每日奖励)",
+        //     "entry": "助战任务开始",
+        //     "pipeline_override": {
+        //         "输入连战次数": {
+        //             "input_text": "5"
+        //         },
+        //         "xdr战斗确认": {
+        //             "next": [
+        //                 "搜索中",
+        //                 "xdr识别进入房间",
+        //                 "xdr识别进入房间1",
+        //                 "返回主页检测"
+        //             ]
+        //         },
+        //         "礼包检测": {
+        //             "next": "检测助战任务是否完成1"
+        //         },
+        //         "等待进入": {
+        //             "next": "主页检测"
+        //         },
+        //         "点击确定": {
+        //             "next": "点击开始自动战斗"
+        //         },
+        //         "点击自动战斗": {
+        //             "next": "点击启用建房"
+        //         }
+        //     },
+        //     "repeatable": false
+        // },
+        // {
+        //     "name": "自动紧纳罗",
+        //     "entry": "startAutoKinnara",
+        //     "pipeline_override": {
+        //         "start": {
+        //             "next":[
+        //                 "主页检测",
+        //                 "clickJoinTheBattle",
+        //                 "teamBattleKinnara",
+        //                 "recognizeEnteringTheRoom_Fire",
+        //                 "recognizeEnteringTheRoom_1_Fire",
+        //                 "[JumpBack]ReturnMainButton",
+        //                 "[JumpBack]CreateTeamClose",
+        //                 "[JumpBack]更新_确定",
+        //                 "[JumpBack]重连房间_确定",
+        //                 "[JumpBack]进入游戏_加载中",
+        //                 "[JumpBack]进入",
+        //                 "[JumpBack]点击开始按钮",
+        //                 "[JumpBack]取消",
+        //                 "[JumpBack]点击空白处关闭",
+        //                 "[JumpBack]领取物资",
+        //                 "[JumpBack]关闭页面1",
+        //                 "[JumpBack]关闭周历",
+        //                 "[JumpBack]KinnaraFinishBatttle",
+        //                 "[JumpBack]重试",
+        //                 "[JumpBack]BattleEndReturn",
+        //                 "[JumpBack]SweepEndConfirm"
+        //             ]
+        //         },
+        //         "礼包检测": {
+        //             "next": "startAutoKinnara"
+        //         }
+        //     },
+        //     "option": [
+        //         "(光劫使)出战队伍",
+        //         "(光劫使)助战虚数体",
+        //         "(暗劫使)出战队伍",
+        //         "(暗劫使)助战虚数体",
+        //         "(火劫使)出战队伍",
+        //         "(火劫使)助战虚数体",
+        //         "(水劫使)出战队伍",
+        //         "(水劫使)助战虚数体",
+        //         "(土劫使)出战队伍",
+        //         "(土劫使)助战虚数体",
+        //         "(风劫使)出战队伍",
+        //         "(风劫使)助战虚数体",
+        //         "紧纳罗出战属性",
+        //         "紧纳罗出战队伍",
+        //         "紧纳罗助战虚宿体",
+        //         "紧纳罗讨伐出战顺序"
+        //     ],
+        //     "doc": "[color:blue][size:20]自动讨伐紧那罗需配置好队伍[/size][/color]\n[color:red][size:20]好友助战机甲需配置：需在还有列表中设置星标，确保每个队伍所指定的机甲均在前三个助战位置中[/size][/color]\n[color:red][size:20]每个劫使均可配置指定出战队伍1~6队,紧罗本体需配置队伍需与劫使分开以免出现异常。[/size][/color]",
+        //     "repeatable": true,
+        //     "repeat_count": 1
+        // },
         {
             "name": "9.25新版自动多人战",
             "entry": "开始多人战-9.25新版",
@@ -392,6 +392,14 @@
             "entry": "DailyOnline"
         },
         {
+            "name": "每日手记",
+            "entry": "Supply"
+        },
+        {
+            "name": "test",
+            "entry": "lc点击一次"
+        },
+        {
             "name": "天使诞生每日",
             "entry": "AngelBirth",
             "pipeline_override": {
@@ -399,7 +407,7 @@
                     "next": [
                         "ClickAngel",
                         "EnterDungeonMain",
-                        "[JumpBack]AddBPClose"
+                        "[JumpBack]AddBPClose1"
                     ]
                 },
                 "AddAPClick": {
@@ -6009,9 +6017,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/武备特级__613_244_90_37__563_194_190_137.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "武备整顿特级"
                         }
                     }
                 },
@@ -6023,9 +6028,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/训练特级__613_483_92_40__563_433_192_140.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "战斗训练特级"
                         }
                     }
                 },
@@ -6037,9 +6039,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/雾水特级__808_246_96_33__758_196_196_133.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "雾水遗迹特级"
                         }
                     }
                 },
@@ -6051,9 +6050,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/炽焰特级__810_481_86_38__760_431_186_138.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "炽焰遗迹特级"
                         }
                     }
                 },
@@ -6065,9 +6061,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/崭岩特级__809_485_90_36__759_435_190_136.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "崭岩遗迹特级"
                         }
                     }
                 },
@@ -6079,9 +6072,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/驰风特级__812_242_84_41__762_192_184_141.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "驰风遗迹特级"
                         }
                     }
                 },
@@ -6093,9 +6083,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/迷暗特级__809_243_89_39__759_193_189_139.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "迷暗遗迹特级"
                         }
                     }
                 },
@@ -6107,9 +6094,6 @@
                         },
                         "SelectMaterailSecond": {
                             "template": "MaterailSweep/胧光特级__810_481_88_37__760_431_188_137.png"
-                        },
-                        "MaterailMain": {
-                            "expected": "胧光遗迹特级"
                         }
                     }
                 },
