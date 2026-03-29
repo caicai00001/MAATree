@@ -2,7 +2,7 @@
     "开始多人战-9.25新版": {
         "next": [
             "加入战斗",
-            "返回主页检测"
+            "[JumpBack]ReturnMain"
         ],
         "timeout": 3000,
         "on_error": ["stopapp"]
@@ -20,6 +20,7 @@
             73
         ],
         "action": "Click",
+        "post_delay": 1000,
         "next": [
             "点击自动战斗",
             "切换到中途模式",
@@ -43,14 +44,24 @@
         "on_error": ["stopapp"]
     },
     "点击自动战斗": {
-        "recognition": "TemplateMatch",
-        "template": "Multi/自动战斗.png",
+        "recognition": "OCR",
+        "expected": [
+            "自动",
+            "战斗"
+        ],
         "action": "Click",
-        "roi" : [151,221,152,160],
+        "roi": [
+            1081,
+            536,
+            171,
+            161
+        ],
         "next": [
             "打开off",
-            "点击连战设置"
+            "点击连战次数",
+            "点击自动战斗"
         ],
+        "post_delay": 500,
         "timeout": 3000,
         "on_error": ["stopapp"]
     },
@@ -59,50 +70,27 @@
         "template": "Common/off.png",
         "action": "Click",
         "roi": [
-            296,
-            208,
-            525,
-            315
+            203,
+            149,
+            117,
+            401
         ],
         "next": [
             "打开off",
-            "点击连战设置"
-        ],
-        "timeout": 3000,
-        "on_error": ["stopapp"]
-    },
-    "点击连战设置": {
-        "recognition": "TemplateMatch",
-        "template": "Common/连战设置.png",
-        "action": "Click",
-        "roi": [
-            679,
-            448,
-            165,
-            75
-        ],
-        "next": [
-            "点击连战次数",
-            "点击连战设置"
+            "点击连战次数"
         ],
         "timeout": 3000,
         "on_error": ["stopapp"]
     },
     "点击连战次数": {
-        "recognition": "TemplateMatch",
-        "template": "Common/连战次数界面.png",
+        "recognition": "OCR",
+        "expected": "^(300|[1-2]\\d{2}|[1-9]?\\d)$",
         "action": "Click",
         "roi": [
-            521,
-            109,
-            255,
-            94
-        ],
-        "target": [
-            611,
-            218,
-            56,
-            34
+            811,
+            375,
+            115,
+            37
         ],
         "next": [
             "删除前连战次数1"
@@ -111,7 +99,7 @@
         "on_error": ["stopapp"]
     },
     "删除前连战次数1": {
-        "action": "Key",
+        "action": "ClickKey",
         "key": 67,
         "post_delay": 50,
         "pre_delay": 10,
@@ -149,37 +137,6 @@
             45
         ],
         "next": [
-            "打开自动再战",
-            "点击确定"
-        ],
-        "timeout": 3000,
-        "on_error": ["stopapp"]
-    },
-    "打开自动再战": {
-        "recognition": "TemplateMatch",
-        "template": "Common/未自动再战.png",
-        "roi": [
-            472,
-            356,
-            69,
-            60
-        ],
-        "action": "Click",
-        "next": [
-            "点击确定"
-        ]
-    },
-    "点击确定": {
-        "recognition": "OCR",
-        "expected": "确定",
-        "action": "Click",
-        "roi": [
-            619,
-            518,
-            341,
-            173
-        ],
-        "next": [
             "检测已选中任务1-是",
             "检测已选中任务1-否"
         ],
@@ -190,8 +147,8 @@
         "recognition": "TemplateMatch",
         "template": "Multi/火幻.png",
         "roi": [
-            205,
-            267,
+            202,
+            213,
             149,
             173
         ],
@@ -208,8 +165,8 @@
         "recognition": "TemplateMatch",
         "template": "Multi/火幻.png",
         "roi": [
-            205,
-            267,
+            202,
+            213,
             149,
             173
         ],
@@ -226,8 +183,8 @@
         "recognition": "TemplateMatch",
         "template": "Multi/火龙.png",
         "roi": [
-            348,
-            286,
+            349,
+            216,
             153,
             150
         ],
@@ -244,8 +201,8 @@
         "recognition": "TemplateMatch",
         "template": "Multi/火龙.png",
         "roi": [
-            348,
-            286,
+            349,
+            216,
             153,
             150
         ],
@@ -262,10 +219,10 @@
         "recognition": "TemplateMatch",
         "template": "Multi/火机.png",
         "roi": [
-            493,
-            271,
+            494,
+            227,
             151,
-            185
+            134
         ],
         "next": [
             "检测已选中任务4-是",
@@ -280,10 +237,10 @@
         "recognition": "TemplateMatch",
         "template": "Multi/火机.png",
         "roi": [
-            493,
-            271,
+            494,
+            227,
             151,
-            185
+            134
         ],
         "inverse": true,
         "pre_delay": 10,
@@ -298,10 +255,10 @@
         "recognition": "TemplateMatch",
         "template": "Multi/无设置.png",
         "roi": [
-            635,
-            269,
-            155,
-            173
+            638,
+            226,
+            144,
+            140
         ],
         "pre_delay": 10,
         "post_delay": 10,
@@ -315,10 +272,10 @@
         "recognition": "TemplateMatch",
         "template": "Multi/无设置.png",
         "roi": [
-            635,
-            269,
-            155,
-            173
+            638,
+            226,
+            144,
+            140
         ],
         "inverse": true,
         "next": [
@@ -331,20 +288,14 @@
     },
     "清空关卡选择": {
         "recognition": "OCR",
-        "expected": "关卡",
+        "expected": "清空",
         "roi": [
+            936,
             190,
-            234,
-            159,
-            98
+            155,
+            32
         ],
         "action": "Click",
-        "target": [
-            828,
-            478,
-            40,
-            14
-        ],
         "next": [
             "检测是否清空关卡选择"
         ],
@@ -356,7 +307,7 @@
         "template": "Multi/无设置.png",
         "roi": [
             205,
-            267,
+            207,
             149,
             173
         ],
