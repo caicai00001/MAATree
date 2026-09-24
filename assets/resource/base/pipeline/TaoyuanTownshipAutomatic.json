@@ -26,7 +26,8 @@
     "roi" : [23,438,1240,180],
     "action": "Click",
     "next": [
-      "selectTaoyuanAttribute"
+      "selectTaoyuanAttribute",
+      "clickTaoyuanTownship"
     ],
     "pre_delay": 600,
     "post_delay": 2000,
@@ -39,7 +40,8 @@
     "roi" : [283,480,972,151],
     "action": "Click",
     "next": [
-      "lostItem"
+      "lostItem",
+      "selectTaoyuanAttribute"
     ],
     "pre_delay": 350,
     "post_delay": 350,
@@ -49,7 +51,8 @@
   "lostItem": {
     "recognition": "OCR",
     "expected": [
-      "迷失"
+      "迷失",
+      "之物"
     ],
     "roi" : [78,232,1184,227],
     "action": "Click",
@@ -138,8 +141,38 @@
     "action": "Click",
     "pre_delay": 350,
     "post_delay": 350,
-    "next": ["moppingLostItem_waitForCompletion"],
-    "timeout": 80000,
+    "next": [
+      "moppingLostItem_again",
+      "ReturnMainButton",
+      "[JumpBack]moppingLostItem_waitForCompletion"
+    ],
+    "timeout": 90000,
+    "on_error": [
+      "stopapp"
+    ]
+  },
+  "moppingLostItem_again": {
+    "enabled": false,
+    "recognition": "OCR",
+    "expected": [
+      "再次",
+      "扫荡"
+    ],
+    "roi": [
+      1039,
+      643,
+      131,
+      57
+    ],
+    "action": "Click",
+    "pre_delay": 400,
+    "post_delay": 1000,
+    "next": [
+      "关闭页面1",
+      "ReturnMainButton",
+      "moppingLostItem_again"
+    ],
+    "timeout": 3000,
     "on_error": ["stopapp"]
   },
   "moppingLostItem_waitForCompletion": {
@@ -154,11 +187,6 @@
     "action": "Click",
     "pre_delay": 400,
     "post_delay": 1000,
-    "next": [
-      "moppingLostItem_waitForCompletion",
-      "LostThings",
-      "[JumpBack]clickBlank"
-    ],
     "timeout": 3000,
     "on_error": ["stopapp"]
   },
@@ -205,7 +233,11 @@
     "action": "Click",
     "pre_delay": 400,
     "post_delay": 400,
-    "next": ["moppingLostThings_waitForCompletion"],
+    "next": [
+      "moppingLostItem_again",
+      "ReturnMainButton",
+      "[JumpBack]moppingLostThings_waitForCompletion"
+    ],
     "timeout": 80000,
     "on_error": ["stopapp"]
   },
@@ -221,11 +253,6 @@
     "action": "Click",
     "pre_delay": 400,
     "post_delay": 1000,
-    "next": [
-      "moppingLostThings_waitForCompletion",
-      "theMasterOfTaoyuan",
-      "[JumpBack]clickBlank"
-    ],
     "timeout": 3000,
     "on_error": ["stopapp"]
   },

@@ -2,6 +2,8 @@
     "开始多人战-9.25新版": {
         "next": [
             "加入战斗",
+            "xdr识别进入房间",
+            "xdr识别进入房间1",
             "[JumpBack]ReturnMain"
         ],
         "timeout": 3000,
@@ -70,10 +72,10 @@
         "template": "Common/off.png",
         "action": "Click",
         "roi": [
-            203,
-            149,
-            117,
-            401
+            147,
+            94,
+            128,
+            50
         ],
         "next": [
             "打开off",
@@ -87,8 +89,8 @@
         "expected": "^(300|[1-2]\\d{2}|[1-9]?\\d)$",
         "action": "Click",
         "roi": [
-            811,
-            375,
+            585,
+            387,
             115,
             37
         ],
@@ -721,7 +723,6 @@
         "next": [
             "识别是否到达限定次数",
             "xdr离开战斗界面",
-            "xdr阵亡",
             "搜索中"
         ],
         "rate_limit": 1500,
@@ -792,7 +793,6 @@
             "战斗胜利",
             "xdr战斗确认",
             "xdr识别进入房间1",
-            "xdr阵亡",
             "xdr超时跳车4",
             "搜索中"
         ],
@@ -830,29 +830,6 @@
             "搜索中"
         ],
         "on_error": ["stopapp"]
-    },
-    "xdr阵亡": {
-        "recognition": "TemplateMatch",
-        "template": "Common/取消.png",
-        "timeout": 120000,
-        "rate_limit": 800,
-        "action": "Click",
-        "next": [
-            "战斗胜利",
-            "战斗未找到",
-            "房间已满",
-            "xdr识别进入房间",
-            "战斗确认",
-            "搜索中",
-            "xdr超时跳车4"
-        ],
-        "on_error": ["xdr战斗超时综合识别"]
-    },
-    "xdr阵亡0": {
-        "recognition": "TemplateMatch",
-        "template": "Common/取消.png",
-        "timeout": 4000,
-        "action": "Click"
     },
     "xdr战斗确认": {
         "recognition": "TemplateMatch",

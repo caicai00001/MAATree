@@ -2,7 +2,7 @@
     "每日物资领取-3.10版本": {
         "next": [
           "领取物质",
-          "返回主页检测"
+          "[JumpBack]ReturnMain"
         ],
         "timeout": 3000,
         "on_error": [
@@ -14,8 +14,8 @@
         "green_mask": true,
         "template": "Activity/活动.png",
         "next": [
-            "点击每日物资",
-            "[JumpBack]wz向上滑动"
+            "点击活动_限时",
+            "领取物质"
         ],
         "roi" : [5,135,236,297],
         "threshold": 0.8,
@@ -42,6 +42,28 @@
           1
         ],
         "duration": 1000
+    },
+    "点击活动_限时": {
+      "recognition": "TemplateMatch",
+      "template": "Activity/活动_限时__12_281_43_31__0_231_105_131.png",
+      "roi": [
+        3,
+        95,
+        70,
+        333
+      ],
+      "next": [
+        "点击每日物资",
+        "点击活动_限时"
+      ],
+      "threshold": 0.95,
+      "action": "Click",
+      "pre_delay": 150,
+      "post_delay": 150,
+      "timeout": 3000,
+      "on_error": [
+        "stopapp"
+      ]
     },
     "点击每日物资":{
       "recognition": "OCR",
@@ -77,7 +99,7 @@
       "next": [
         "12点每日物资待领取",
         "18点每日物资待领取",
-        "每日领取关闭"
+        "ReturnMainButton"
       ],
       "threshold": 0.95,
       "action": "Click",
@@ -95,9 +117,10 @@
       "next": [
           "12点每日物资待领取",
           "18点每日物资待领取",
-          "每日领取关闭",
+          "ReturnMainButton",
           "[JumpBack]wz点击空白处"
       ],
+      "threshold": 0.9,
       "action": "Click",
       "pre_delay": 150,
       "post_delay": 150,
@@ -112,9 +135,10 @@
       "roi" : [907,532,160,67],
       "next": [
           "18点每日物资待领取",
-          "每日领取关闭",
+          "ReturnMainButton",
           "[JumpBack]wz点击空白处"
       ],
+      "threshold": 0.9,
       "action": "Click",
       "pre_delay": 150,
       "post_delay": 150,
@@ -127,18 +151,11 @@
       "recognition": "OCR",
       "expected": "空白",
       "action": "Click",
-      "roi" : [550,603,164,71]
-    },
-    "每日领取关闭": {
-      "recognition": "TemplateMatch",
-      "template": "StartUp/X.png",
-      "roi" : [1225,21,45,40],
-      "action": "Click",
-      "pre_delay": 50,
-      "post_delay": 50,
-      "timeout": 300,
-      "on_error": [
-        "停止"
+      "roi": [
+        550,
+        603,
+        164,
+        71
       ]
     }
 }

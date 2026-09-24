@@ -53,14 +53,7 @@
         {
             "name": "每日物资",
             "entry": "每日物资领取-3.10版本",
-            "pipeline_override": {
-                "等待进入": {
-                    "next": "主页检测"
-                },
-                "礼包检测": {
-                    "next": "每日物资领取-3.10版本"
-                }
-            },
+            "pipeline_override": {},
             "repeatable": false
         },
         {
@@ -139,7 +132,8 @@
             "entry": "startAutoTaoyuanTownship",
             "option": [
                 "神狱桃源乡属性",
-                "神狱之主等级"
+                "神狱之主等级",
+                "无限再次扫荡"
             ],
             "pipeline_override": {
                 "等待进入": {
@@ -206,10 +200,6 @@
             },
             "repeatable": true,
             "repeat_count": 1
-        },
-        {
-            "name": "每日在线",
-            "entry": "DailyOnline"
         },
         {
             "name": "每日手记",
@@ -588,6 +578,21 @@
                             ]
                         }
                     }
+                }
+            ]
+        },
+        "无限再次扫荡": {
+            "cases": [
+                {
+                    "name": "yes",
+                    "pipeline_override": {
+                        "moppingLostItem_again": {
+                            "enabled": true
+                        }
+                    }
+                },
+                {
+                    "name": "no"
                 }
             ]
         },
