@@ -244,8 +244,8 @@
         ]
     },
     "战斗胜利-点击返回": {
-        "recognition": "TemplateMatch",
-        "template": "StartUp/返回.png",
+        "recognition": "OCR",
+        "expected": "返回",
         "action": "Click",
         "roi": [
             1025,
