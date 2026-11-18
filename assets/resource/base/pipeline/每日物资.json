@@ -1,7 +1,7 @@
 {
     "每日物资领取-3.10版本": {
         "next": [
-          "领取物质",
+          "EnterActMain",
           "[JumpBack]ReturnMain"
         ],
         "timeout": 3000,
@@ -12,12 +12,17 @@
     "领取物质": {
         "recognition": "TemplateMatch",
         "green_mask": true,
-        "template": "Activity/活动.png",
+        "template": "Activity/活动__10_106_53_47__0_56_113_147.png",
         "next": [
             "点击活动_限时",
             "领取物质"
         ],
-        "roi" : [5,135,236,297],
+        "roi": [
+          5,
+          85,
+          235,
+          253
+        ],
         "threshold": 0.8,
         "action": "Click",
         "pre_delay": 300,

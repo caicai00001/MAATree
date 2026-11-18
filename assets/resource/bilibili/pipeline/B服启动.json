@@ -1,6 +1,5 @@
 {
     "stopapp": {
-        "package": "com.bilibili.yjzs.bili"
     },
     "stopapp_断网": {
         "package": "com.bilibili.yjzs.bili"

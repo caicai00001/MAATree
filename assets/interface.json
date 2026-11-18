@@ -53,7 +53,14 @@
         {
             "name": "每日物资",
             "entry": "每日物资领取-3.10版本",
-            "pipeline_override": {},
+            "pipeline_override": {
+                "EnterActMain": {
+                    "next": [
+                        "领取物质",
+                        "[JumpBack]EnterActMain"
+                    ]
+                }
+            },
             "repeatable": false
         },
         {

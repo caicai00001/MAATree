@@ -274,24 +274,22 @@
             "[JumpBack]KinnaraFinishBatttle"
         ],
         "recognition": "TemplateMatch",
-        "template": "StartUp/主页礼包.png",
+        "template": "Main/主界面标识__1207_36_55_49__1157_0_123_135.png",
         "roi": [
-            12,
-            110,
-            151,
-            391
+            1201,
+            30,
+            65,
+            58
         ]
     },
     "主页检测": {
         "recognition": "TemplateMatch",
-//        "template": "主页出击.png",
-//        "roi" : [847,299,415,346],
-        "template": "StartUp/主页礼包.png",
+        "template": "Main/主界面标识__1207_36_55_49__1157_0_123_135.png",
         "roi": [
-            12,
-            110,
-            151,
-            391
+            1201,
+            30,
+            65,
+            58
         ],
         "next": [
             "礼包检测",
@@ -367,12 +365,12 @@
     },
     "MainFlag": {
         "recognition": "TemplateMatch",
-        "template": "Main/主界面标识__1028_461_79_82__978_411_179_182.png",
+        "template": "Main/主界面标识__1207_36_55_49__1157_0_123_135.png",
         "roi": [
-            869,
-            456,
-            388,
-            150
+            1201,
+            30,
+            65,
+            58
         ]
     },
     "BattleEndReturn": {
